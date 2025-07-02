@@ -1,45 +1,44 @@
 :root {
-  --nwc-primary: #6e00ff;
-  --nwc-dark: #0a0a0a;
-  --nwc-light: #f5f5f5;
-  --nwc-accent: #9d5dff;
-  --font-main: 'Inter', sans-serif;
+  --dark: #0a0a0a;
+  --primary: #6e00ff;
+  --accent: #ae85ff;
+  --light: #f5f5f5;
+  --font: 'Inter', sans-serif;
 }
 
 body {
+  font-family: var(--font);
   margin: 0;
-  font-family: var(--font-main);
-  background-color: white;
+  background: white;
   color: #111;
   scroll-behavior: smooth;
 }
 
 .container {
-  max-width: 1100px;
+  max-width: 1140px;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
 .navbar {
-  background-color: var(--nwc-dark);
+  background-color: var(--dark);
   padding: 1rem 0;
   position: sticky;
   top: 0;
-  z-index: 100;
+  z-index: 999;
 }
 
 .logo {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.5rem;
   color: white;
-  font-weight: 600;
-  font-size: 1.25rem;
+  font-weight: 700;
+  font-size: 1.2rem;
 }
 
 .logo img {
   height: 50px;
-  width: auto;
 }
 
 .navbar .container {
@@ -53,105 +52,123 @@ body {
   text-decoration: none;
   margin-left: 1.5rem;
   font-weight: 500;
+  transition: 0.3s ease;
 }
 
 .nav-links a:hover {
-  color: var(--nwc-accent);
+  color: var(--accent);
 }
 
 .hero {
-  background: linear-gradient(to bottom right, #0a0a0a, #1f1f1f);
+  background: linear-gradient(to bottom right, #0a0a0a, #1e1e1e);
   color: white;
-  padding: 6rem 1rem;
+  padding: 6rem 1rem 5rem;
   text-align: center;
 }
 
-.hero-content h1 {
-  font-size: 2.75rem;
-  margin-bottom: 1rem;
+.hero h1 {
+  font-size: 2.8rem;
   font-weight: 700;
+  margin-bottom: 1rem;
 }
 
-.hero-content p {
-  font-size: 1.15rem;
+.hero p {
+  font-size: 1.2rem;
   max-width: 720px;
   margin: 0 auto 2rem;
 }
 
 .cta-button {
-  background: var(--nwc-primary);
+  background: var(--primary);
   color: white;
   padding: 0.75rem 1.5rem;
-  font-weight: 600;
   border-radius: 6px;
+  font-weight: 600;
   text-decoration: none;
-  transition: 0.3s ease;
+  transition: background 0.3s;
+  display: inline-block;
 }
 
 .cta-button:hover {
-  background: var(--nwc-accent);
+  background: var(--accent);
 }
 
-.about,
-.teams,
-.join {
-  padding: 4rem 1rem;
+.cta-button.dark {
+  background: #222;
+  border: 1px solid #888;
+}
+
+.cta-button.dark:hover {
+  background: #444;
+}
+
+section {
+  padding: 5rem 1rem;
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
   text-align: center;
 }
 
-.about h2,
-.teams h2,
-.join h2 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
-  font-weight: 700;
+.about p,
+.semester p,
+.join p {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
 }
 
-.team-grid {
-  display: flex;
-  flex-wrap: wrap;
+.semester-list {
+  list-style-type: disc;
+  max-width: 800px;
+  margin: 0 auto;
+  padding-left: 1.5rem;
+  line-height: 1.8;
+  font-size: 1.05rem;
+}
+
+.desk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
-  justify-content: center;
   margin-top: 2rem;
 }
 
-.team-card {
-  background-color: var(--nwc-light);
-  padding: 2rem;
+.desk-card {
+  background: #f9f9f9;
+  padding: 1.5rem;
   border-radius: 10px;
-  max-width: 300px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease;
 }
 
-.team-card:hover {
+.desk-card:hover {
   transform: translateY(-6px);
 }
 
+.desk-card h3 {
+  margin-bottom: 0.5rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
 .footer {
-  background-color: var(--nwc-dark);
+  background-color: var(--dark);
   color: #aaa;
   padding: 2rem 1rem;
   text-align: center;
   font-size: 0.9rem;
 }
 
-.cta-button.dark {
-  background-color: #222;
-  border: 1px solid #888;
-}
-
-.cta-button.dark:hover {
-  background-color: #444;
-  color: white;
-}
-
 @media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2rem;
+  }
   .nav-links {
     display: none;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
   }
 }
