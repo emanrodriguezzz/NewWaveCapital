@@ -2,80 +2,97 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>New Wave Capital Investments</title>
   <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
 </head>
 <body>
   <header class="hero">
-    <div class="left">
-      <h1>NEW WAVE<br><span class="subheading">Capital Investments</span></h1>
-      <p class="tagline">A Hedge Fund Club for students at the University of Michigan</p>
-    </div>
-    <div class="right">
-      <img src="logo.png" alt="New Wave Logo" class="hero-logo" />
+    <nav class="navbar">
+      <div class="logo">New Wave Capital</div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#strategy">Strategy</a></li>
+        <li><a href="#semester">Semester</a></li>
+        <li><a href="#join">Join</a></li>
+      </ul>
+    </nav>
+    <div class="hero-content">
+      <h1>New Wave Capital Investments</h1>
+      <p>A Hedge Fund Club at the University of Michigan</p>
+      <a href="#join" class="cta-button">Join Now</a>
     </div>
   </header>
 
   <main>
-    <section class="intro">
+    <section id="about" class="section fade-in">
       <h2>Who We Are</h2>
       <p>
-        Started by students with experience at top firms and clubs such as Morgan Stanley, BlackRock, and the Global Investments Committee.
+        Founded by students with experience at top firms like Morgan Stanley and BlackRock, New Wave is a selective investment club training the next generation of high-performing analysts.
       </p>
       <p>
-        We are a community of ambitious and high-performing students, aspiring to lead the next generation of investment analysis.
-      </p>
-      <p>
-        Whether you're pursuing investment banking, private equity, portfolio and wealth management, quantitative analysis, consulting, or simply curious about understanding financial markets — we offer a place to gain experience pitching and receive elite finance education.
-      </p>
-      <p>
-        We welcome both Ross and Non-Ross students and encourage alternative investing methods rooted in STEM and public policy.
-      </p>
-      <p class="bold">We think outside the box. NOTHING is off limits.</p>
-    </section>
-
-    <section class="strategy">
-      <h2>Our Investment Philosophy</h2>
-      <p>
-        We aim to simulate the alpha generation of a real hedge fund with a diversified and wide range of investments—offering typical lower-risk long/short positions while allowing more creative, higher-risk pitches using everything from commodities and options trading to polymarket arbitrage and AI algorithms.
+        We foster a creative and technically rigorous approach to markets — encouraging unconventional analysis, interdisciplinary thinking, and practical experience.
       </p>
     </section>
 
-    <section class="semester">
-      <h2>What Does a Semester Look Like?</h2>
+    <section id="strategy" class="section fade-in">
+      <h2>Investment Strategy</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Long/Short Equity</h3>
+          <p>Fundamental and technical equity analysis with hedged exposures.</p>
+        </div>
+        <div class="card">
+          <h3>Quant & Arbitrage</h3>
+          <p>Factor-driven models, arbitrage, betting markets, and pricing dislocations.</p>
+        </div>
+        <div class="card">
+          <h3>Alternative Assets</h3>
+          <p>Options, distressed debt, commodities, REITs, and experimental trades.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="semester" class="section fade-in">
+      <h2>A Semester at New Wave</h2>
       <ul>
-        <li>Members are divided into investment desks by strategy:
-          <ul class="nested">
-            <li>Long/Short Equity</li>
-            <li>Private Equity</li>
-            <li>Quant, Arbitrage & Tech-Driven Strategies</li>
-            <li>Macro, Policy & Betting Markets</li>
-            <li>Alternative Long/Short (commodities, REITs, distressed debt, bonds, options)</li>
-            <li>Wildcard Desk (experimental strategies)</li>
-          </ul>
-        </li>
-        <li>Each desk pitches once per semester, with a core idea and hedge plan</li>
-        <li>New members complete an individual pitch project</li>
-        <li>Weekly education sessions on hedge fund strategies and modeling</li>
-        <li>Semester Dinner to celebrate pitches and accomplishments</li>
-        <li>Club Party to build camaraderie outside finance</li>
-        <li>Career development: resumes, networking, and interview prep</li>
+        <li>Specialized investment desks pitch once per semester</li>
+        <li>New members complete a personal pitch project</li>
+        <li>Weekly education sessions on hedge fund strategy & modeling</li>
+        <li>Club Dinner + Club Party</li>
+        <li>Career support: resume, networking, interviews</li>
       </ul>
     </section>
 
-    <section class="call">
-      <h2>Interested?</h2>
-      <p>
-        We're looking for people with unique views on analysis who aren't afraid to think differently and invest unconventionally.
-      </p>
-      <a href="mailto:newwave@umich.edu" class="cta-button">Join New Wave Capital Investments Club</a>
+    <section id="join" class="section fade-in">
+      <h2>Ready to Think Differently?</h2>
+      <p>We welcome bold thinkers with unique perspectives on investment analysis.</p>
+      <a href="mailto:newwave@umich.edu" class="cta-button dark">Apply Now</a>
     </section>
   </main>
 
   <footer>
     <p>&copy; 2025 New Wave Capital Investments · University of Michigan</p>
   </footer>
+
+  <script>
+    const faders = document.querySelectorAll('.fade-in');
+    const appearOptions = {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px"
+    };
+    const appearOnScroll = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+        entry.target.classList.add("appear");
+        observer.unobserve(entry.target);
+      });
+    }, appearOptions);
+
+    faders.forEach(el => appearOnScroll.observe(el));
+  </script>
 </body>
 </html>
