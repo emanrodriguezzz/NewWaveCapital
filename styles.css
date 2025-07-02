@@ -1,7 +1,6 @@
-
-  :root {
+:root {
   --nwc-dark: #0a0a0a;
-  --nwc-light: #f5f5f5;
+  --nwc-light: #f9f9f9;
   --nwc-purple: #6e00ff;
   --nwc-gradient: linear-gradient(135deg, #5118c4, #9355f7);
   --font-main: 'Inter', sans-serif;
@@ -34,13 +33,14 @@ a {
 
 header {
   background: var(--nwc-dark);
-  padding: 1.5rem 0;
+  padding: 1.2rem 0;
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 
 header .logo {
@@ -77,7 +77,7 @@ nav a:hover {
 }
 
 .hero p {
-  font-size: 1.25rem;
+  font-size: 1.2rem;
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
@@ -92,7 +92,7 @@ nav a:hover {
 }
 
 .btn-primary:hover {
-  background: #eee;
+  background: #f0f0f0;
 }
 
 .section {
@@ -102,14 +102,14 @@ nav a:hover {
 
 .section-alt {
   padding: 5rem 0;
-  background: #fafafa;
+  background: var(--nwc-light);
 }
 
 .section-title {
   text-align: center;
   font-size: 2rem;
   font-weight: 700;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
 }
 
 .section-description {
@@ -121,10 +121,9 @@ nav a:hover {
 
 .two-col {
   display: flex;
-  flex-direction: row;
   gap: 3rem;
-  justify-content: space-between;
   flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .two-col > div {
@@ -136,6 +135,7 @@ nav a:hover {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 2rem;
+  margin-top: 2rem;
 }
 
 .card {
@@ -147,7 +147,7 @@ nav a:hover {
 }
 
 .card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .card h3 {
@@ -158,14 +158,15 @@ nav a:hover {
 .workflow-list {
   list-style: none;
   padding-left: 0;
-  max-width: 800px;
-  margin: 2rem auto;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .workflow-list li {
-  padding: 0.8rem 0;
-  border-bottom: 1px solid #ddd;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e0e0e0;
   font-size: 1.05rem;
+  font-weight: 400;
 }
 
 .text-center {
@@ -205,15 +206,21 @@ footer a {
   }
 
   .hero h1 {
-    font-size: 2rem;
+    font-size: 2.2rem;
   }
 
   .hero p {
     font-size: 1rem;
   }
 
-  .header-container {
+  nav ul {
     flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+
+  .header-container {
+    justify-content: center;
     gap: 1rem;
   }
 }
