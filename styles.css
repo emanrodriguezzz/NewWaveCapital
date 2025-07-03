@@ -1,4 +1,4 @@
-/* Reset and global styles */
+/* Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -28,10 +28,6 @@ h1 {
 
 h2 {
   font-size: 2rem;
-}
-
-h3 {
-  font-size: 1.25rem;
 }
 
 p {
@@ -95,10 +91,6 @@ nav ul li a:hover {
   padding: 6rem 1rem;
 }
 
-.hero h1 {
-  font-size: 3.2rem;
-}
-
 .hero p {
   font-size: 1.3rem;
   color: #e0e0e0;
@@ -135,7 +127,16 @@ nav ul li a:hover {
   color: white;
 }
 
-/* Section Titles */
+/* Sections */
+.section,
+.section-alt {
+  padding: 4rem 1rem;
+}
+
+.section-alt {
+  background-color: #f8f8ff;
+}
+
 .section-title {
   text-align: center;
   font-size: 2rem;
@@ -148,17 +149,7 @@ nav ul li a:hover {
   margin: 0 auto 2rem;
 }
 
-/* Sections */
-.section,
-.section-alt {
-  padding: 4rem 1rem;
-}
-
-.section-alt {
-  background-color: #f8f8ff;
-}
-
-/* Two Column Layout */
+/* Grid Layouts */
 .two-col {
   display: flex;
   flex-wrap: wrap;
@@ -169,7 +160,6 @@ nav ul li a:hover {
   flex: 1 1 45%;
 }
 
-/* Cards & Grid */
 .grid-3 {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -188,7 +178,7 @@ nav ul li a:hover {
   transform: translateY(-5px);
 }
 
-/* Workflow list */
+/* Workflow */
 .workflow-list {
   list-style-type: disc;
   padding-left: 1.5rem;
@@ -198,28 +188,37 @@ nav ul li a:hover {
   margin-bottom: 1rem;
 }
 
-/* Executive Board */
-#board .card h3 {
-  color: #6e00ff;
-}
-
-/* Ross Image Section */
-.ross-image-section {
-  background-color: #fff;
+/* Ross Showcase Background */
+.ross-showcase {
+  background-image: url('ross-building.jpg');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
-  padding: 3rem 1rem 1rem;
+  margin: 4rem 0;
 }
 
-.ross-image {
-  max-width: 100%;
-  border-radius: 10px;
-  box-shadow: 0 0 14px rgba(0, 0, 0, 0.1);
+.ross-showcase .overlay {
+  background-color: rgba(0, 0, 0, 0.55);
+  padding: 3rem;
+  border-radius: 8px;
+  color: #fff;
+  max-width: 700px;
 }
 
-.caption {
-  font-size: 0.95rem;
-  color: #555;
-  margin-top: 0.5rem;
+.ross-showcase h2 {
+  font-size: 2.4rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.ross-showcase p {
+  font-size: 1.1rem;
+  color: #ddd;
 }
 
 /* Footer */
@@ -253,5 +252,9 @@ footer p {
 
   .two-col {
     flex-direction: column;
+  }
+
+  .ross-showcase {
+    background-attachment: scroll;
   }
 }
