@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>New Wave Capital | UMich Hedge Fund Club</title>
 
+  <!-- Metadata -->
   <meta name="description" content="New Wave Capital is the University of Michigan’s premier hedge fund club, focused on innovative investing and elite financial education.">
   <meta name="keywords" content="University of Michigan, hedge fund club, student investing, New Wave Capital, Ross finance, quant, private equity">
   <meta name="author" content="New Wave Capital Club">
@@ -13,8 +14,9 @@
   <meta property="og:description" content="A student-run hedge fund club at the University of Michigan simulating real investing through bold, modern strategies.">
   <meta property="og:image" content="nwc-logo.jpg">
   <meta property="og:url" content="https://newwavecapitalumich.org/">
-  <meta name="theme-color" content="#6e00ff" />
+  <meta name="theme-color" content="#0a0a0a" />
 
+  <!-- Assets -->
   <link rel="icon" href="nwc-logo.jpg" type="image/jpeg" />
   <link href="styles.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
@@ -22,6 +24,8 @@
 </head>
 
 <body>
+
+  <!-- Header -->
   <header>
     <div class="container header-container">
       <img src="nwc-logo.jpg" alt="New Wave Capital Logo" class="logo" />
@@ -36,14 +40,18 @@
     </div>
   </header>
 
-  <section class="hero">
-    <div class="container" data-aos="fade-up">
-      <h1>New Wave Capital</h1>
-      <p>The student hedge fund at the University of Michigan Ross School of Business</p>
-      <a href="#join" class="btn-primary">Join the Fund</a>
+  <!-- Hero Section with Ross Background -->
+  <section class="hero-background">
+    <div class="overlay">
+      <div class="hero-content" data-aos="fade-up">
+        <h1>New Wave Capital</h1>
+        <p>A student-run hedge fund at the University of Michigan Ross School of Business</p>
+        <a href="#join" class="btn-primary">Join the Fund</a>
+      </div>
     </div>
   </section>
 
+  <!-- About -->
   <section class="section" id="about">
     <div class="container two-col" data-aos="fade-up">
       <div>
@@ -61,14 +69,7 @@
     </div>
   </section>
 
-  <!-- ROSS BACKGROUND IMAGE SECTION -->
-  <section class="ross-showcase">
-    <div class="overlay" data-aos="zoom-in">
-      <h2>Stephen M. Ross School of Business</h2>
-      <p>Home of New Wave Capital</p>
-    </div>
-  </section>
-
+  <!-- Desks -->
   <section class="section-alt" id="desks">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">Investment Strategy Desks</h2>
@@ -76,34 +77,17 @@
         Members are divided across distinct research desks, each tasked with exploring a specific approach to alpha generation.
       </p>
       <div class="grid-3">
-        <div class="card">
-          <h3>Long/Short Equity</h3>
-          <p>Public equities, with technical and fundamental thesis formation and risk hedging.</p>
-        </div>
-        <div class="card">
-          <h3>Quantitative</h3>
-          <p>Model-driven strategies using statistical analysis, backtesting, and algorithmic systems.</p>
-        </div>
-        <div class="card">
-          <h3>Macro & Policy</h3>
-          <p>Geopolitical and economic trend forecasting. Interest rates, policy shifts, and global risk.</p>
-        </div>
-        <div class="card">
-          <h3>Private Equity</h3>
-          <p>Valuation modeling, industry mapping, and investment analysis in private markets.</p>
-        </div>
-        <div class="card">
-          <h3>Arbitrage</h3>
-          <p>Short-term pricing inefficiencies across markets, platforms, and instruments.</p>
-        </div>
-        <div class="card">
-          <h3>Wildcard</h3>
-          <p>Experimental strategies that fall outside of traditional verticals — built to innovate.</p>
-        </div>
+        <div class="card"><h3>Long/Short Equity</h3><p>Public equities with technical and fundamental thesis formation and risk hedging.</p></div>
+        <div class="card"><h3>Quantitative</h3><p>Model-driven strategies using statistical analysis, backtesting, and algorithmic systems.</p></div>
+        <div class="card"><h3>Macro & Policy</h3><p>Geopolitical and economic trend forecasting. Interest rates, policy shifts, and global risk.</p></div>
+        <div class="card"><h3>Private Equity</h3><p>Valuation modeling, industry mapping, and investment analysis in private markets.</p></div>
+        <div class="card"><h3>Arbitrage</h3><p>Short-term pricing inefficiencies across markets, platforms, and instruments.</p></div>
+        <div class="card"><h3>Wildcard</h3><p>Experimental strategies that fall outside of traditional verticals — built to innovate.</p></div>
       </div>
     </div>
   </section>
 
+  <!-- Semester Format -->
   <section class="section" id="semester">
     <div class="container" data-aos="fade-up">
       <h2 class="section-title">Structure of a Semester</h2>
@@ -118,6 +102,7 @@
     </div>
   </section>
 
+  <!-- Join CTA -->
   <section class="section-alt text-center" id="join">
     <div class="container" data-aos="zoom-in">
       <h2>Join New Wave Capital</h2>
@@ -126,6 +111,7 @@
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <div class="container footer-container">
       <p>&copy; 2025 New Wave Capital – University of Michigan</p>
@@ -133,6 +119,7 @@
     </div>
   </footer>
 
+  <!-- AOS Animation -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
     AOS.init({ duration: 900, once: true });
