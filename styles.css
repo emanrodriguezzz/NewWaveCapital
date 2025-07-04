@@ -1,25 +1,40 @@
+/* === Root and Base Styles === */
 :root {
-  --primary: #0a0a0a;
-  --accent: #0056b3;
-  --light-bg: #f9f9f9;
-  --text: #1a1a1a;
+  --primary: #001b4f;
+  --accent: #004fc5;
+  --light: #f5f5f5;
+  --dark: #0a0a0a;
+  --text: #222;
+  --font: 'Inter', sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  font-family: 'Inter', sans-serif;
-  background: white;
+  font-family: var(--font);
   color: var(--text);
+  background-color: white;
   line-height: 1.6;
 }
 
-img {
-  max-width: 100%;
-  height: auto;
+a {
+  text-decoration: none;
+  color: var(--accent);
 }
 
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* === Header === */
 header {
-  background: var(--primary);
+  background: var(--dark);
   padding: 1rem 0;
   color: white;
   position: sticky;
@@ -28,12 +43,9 @@ header {
 }
 
 .header-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
 }
 
 .logo {
@@ -41,109 +53,112 @@ header {
 }
 
 nav ul {
-  list-style: none;
   display: flex;
   gap: 1.5rem;
-  margin: 0;
-  padding: 0;
+  list-style: none;
 }
 
 nav a {
   color: white;
-  text-decoration: none;
   font-weight: 600;
-  font-size: 1rem;
+  transition: color 0.2s ease;
 }
 
 nav a:hover {
   color: var(--accent);
 }
 
+/* === Hero Section === */
 .hero-background {
-  background: url('ross-bg.jpg') center/cover no-repeat;
-  position: relative;
-  height: 85vh;
+  background: url('ross-building.jpg') center/cover no-repeat;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  position: relative;
+  color: white;
 }
 
 .overlay {
-  background: rgba(0, 0, 0, 0.6);
-  padding: 3rem 1rem;
-  width: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .hero-content {
-  color: white;
+  text-align: center;
   max-width: 800px;
-  margin: 0 auto;
+  padding: 2rem;
+  z-index: 2;
 }
 
-.main-logo {
-  width: 160px;
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
-h1 {
-  font-size: 2.5rem;
-  margin: 0.5rem 0;
+.hero-content p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
 }
 
-p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
+.main-logo {
+  height: 100px;
+  margin-bottom: 1rem;
 }
 
-.btn-primary,
-.btn-secondary {
+/* === Buttons === */
+.btn-primary, .btn-secondary {
   padding: 0.75rem 1.5rem;
-  font-weight: bold;
+  font-weight: 600;
   border: none;
   border-radius: 5px;
-  text-decoration: none;
-  display: inline-block;
+  cursor: pointer;
 }
 
 .btn-primary {
-  background-color: #0056b3;
+  background-color: var(--accent);
   color: white;
 }
 
 .btn-secondary {
-  background-color: white;
-  color: #0056b3;
-  border: 2px solid #0056b3;
+  background-color: var(--dark);
+  color: white;
 }
 
+.btn-primary:hover,
+.btn-secondary:hover {
+  opacity: 0.85;
+}
+
+/* === Sections === */
 .section,
 .section-alt {
-  padding: 4rem 1rem;
+  padding: 4rem 0;
 }
 
 .section-alt {
-  background: var(--light-bg);
+  background-color: var(--light);
 }
 
 .section-title {
   font-size: 2rem;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .section-description {
   text-align: center;
-  max-width: 700px;
-  margin: 0 auto 2rem;
+  margin-bottom: 2rem;
+  color: #555;
 }
 
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-
+/* === Two Column Layout === */
 .two-col {
   display: flex;
   gap: 2rem;
@@ -155,102 +170,68 @@ p {
   min-width: 280px;
 }
 
+/* === Desks Grid === */
 .grid-3 {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-  margin-top: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
 }
 
 .card {
   background: white;
-  border-radius: 8px;
   padding: 1.5rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+  transition: 0.2s ease;
 }
 
+.card:hover {
+  transform: translateY(-5px);
+}
+
+/* === Semester List === */
 .workflow-list {
   list-style: none;
-  padding: 0;
+  padding-left: 0;
+  line-height: 1.8;
   max-width: 800px;
   margin: 0 auto;
 }
 
 .workflow-list li {
   margin-bottom: 1rem;
-  font-size: 1.05rem;
 }
 
-footer {
-  background: #0a0a0a;
-  color: #ccc;
-  text-align: center;
-  padding: 2rem 1rem;
-  font-size: 0.9rem;
-}
-
-footer a {
-  color: var(--accent);
-}
-
-/* Executive Board Section */
-.executive-row {
+.exec-board {
   display: flex;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
 }
 
 .exec-card {
-  background: white;
-  padding: 1rem;
   text-align: center;
-  border-radius: 10px;
-  width: 200px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  max-width: 220px;
 }
 
-.exec-photo {
-  width: 160px;
-  height: 160px;
+.exec-card img {
+  width: 100%;
+  max-width: 180px;
+  height: 180px;
   object-fit: cover;
-  border-radius: 50%;
-  margin-bottom: 0.75rem;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 }
 
 .linkedin-icon {
   width: 24px;
-  margin-top: 0.5rem;
+  height: 24px;
+  margin-top: 8px;
+  transition: transform 0.2s ease;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
-  .hero-background {
-    height: auto;
-    padding: 3rem 1rem;
-  }
-
-  .hero-content h1 {
-    font-size: 2rem;
-  }
-
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-    align-items: flex-end;
-  }
-
-  .two-col {
-    flex-direction: column;
-  }
-
-  .main-logo {
-    width: 120px;
-  }
-
-  .exec-card {
-    width: 90%;
-    max-width: 260px;
-  }
+.linkedin-icon:hover {
+  transform: scale(1.1);
 }
