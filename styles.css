@@ -259,7 +259,7 @@ footer {
     height: 140px;
   }
   .semester-background {
-  background: url('ross-semester.jpg') center center/cover no-repeat;
+  background: url('ross-semester.jpg.tiff') center center/cover no-repeat;
   position: relative;
   color: #fff;
 }
