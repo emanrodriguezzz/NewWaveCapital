@@ -199,17 +199,17 @@ footer {
   display: flex;
   justify-content: center;
   align-items: flex-start;
-  flex-wrap: wrap;
   gap: 40px;
+  flex-wrap: wrap;
   margin-top: 40px;
-  text-align: center;
 }
 
 .exec-card {
-  width: 240px;
-  background-color: #1b1b1b;
-  border-radius: 8px;
+  background-color: #1c1c1c;
+  width: 220px;
   padding: 20px;
+  border-radius: 8px;
+  text-align: center;
   box-shadow: 0 0 12px rgba(255, 255, 255, 0.05);
   transition: transform 0.3s ease;
 }
@@ -220,16 +220,15 @@ footer {
 
 .exec-photo {
   width: 100%;
-  height: 240px;
+  height: 220px;
   object-fit: cover;
-  border-radius: 8px;
-  margin-bottom: 16px;
+  border-radius: 6px;
+  margin-bottom: 12px;
 }
 
 .exec-card h3 {
-  margin: 10px 0 4px;
+  margin-bottom: 6px;
   font-size: 1.1rem;
-  color: #f2f2f2;
 }
 
 .exec-card p {
@@ -248,76 +247,25 @@ footer {
   transform: scale(1.1);
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .executive-row {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .exec-card {
-    width: 90%;
-    max-width: 300px;
-  }
-
-  .exec-photo {
-    height: 220px;
-  }
+/* Semester Background */
+.semester-background {
+  background: url('rossinside.webp') center center/cover no-repeat;
+  position: relative;
+  color: #fff;
 }
 
-
-/* Leadership Grid */
-.leadership-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  justify-content: center;
-  margin-top: 40px;
+.semester-background::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.65); /* dark overlay */
+  z-index: 0;
 }
 
-.leader-card {
-  background-color: #fff;
-  color: #111;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  text-align: center;
-}
-
-.leader-photo {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 16px;
-}
-
-.leader-info .role {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.leader-info .name {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #3ca6ff;
-}
-
-.leader-info .name:hover {
-  text-decoration: underline;
-}
-
-.leader-info .details {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 4px;
-}
-
-.linkedin-icon-sm {
-  margin-top: 8px;
-  width: 20px;
-  height: 20px;
+#semester .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive */
@@ -341,37 +289,16 @@ footer {
   }
 
   .exec-card {
-    width: 100%;
-    max-width: 300px;
+    width: 90%;
+    max-width: 320px;
   }
 
   .exec-photo {
-    max-width: 140px;
-    height: 140px;
+    height: 200px;
   }
 
   .executive-row {
     flex-direction: column;
     align-items: center;
-  }
-
-  .semester-background {
-    background: url('rossinside.webp') center center/cover no-repeat;
-    position: relative;
-    color: #fff;
-  }
-
-  .semester-background::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0, 0, 0, 0.65);
-    z-index: 0;
-  }
-
-  #semester .container {
-    position: relative;
-    z-index: 1;
   }
 }
