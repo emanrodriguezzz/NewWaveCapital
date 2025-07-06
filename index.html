@@ -5,20 +5,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>New Wave Capital | University of Michigan</title>
 
-  <!-- SEO Metadata -->
-  <meta name="description" content="New Wave Capital is the University of Michigan’s premier hedge fund club, focused on innovative investing and elite financial education.">
-  <meta name="keywords" content="University of Michigan, hedge fund club, student investing, New Wave Capital, Ross finance, quant, private equity">
-  <meta name="author" content="New Wave Capital Club">
-  <link rel="canonical" href="https://newwavecapitalumich.org/" />
-  <meta property="og:title" content="New Wave Capital | UMich Hedge Fund Club">
-  <meta property="og:description" content="A student-run hedge fund club at the University of Michigan simulating real investing through bold, modern strategies.">
-  <meta property="og:image" content="logo-nwc-final.png">
-  <meta property="og:url" content="https://newwavecapitalumich.org/">
+  <!-- Metadata -->
+  <meta name="description" content="New Wave Capital is UMich’s premier hedge fund club, offering hands-on investing experience through real strategy simulation.">
+  <meta name="keywords" content="UMich, hedge fund, investing club, Ross finance, New Wave Capital, student investing">
+  <meta property="og:image" content="logo-nwc-final.png" />
   <meta name="theme-color" content="#111827" />
 
   <!-- Assets -->
-  <link rel="icon" href="logo-nwc-final.png" type="image/png" />
-  <link href="styles.css" rel="stylesheet" />
+  <link rel="icon" href="logo-nwc-final.png" />
+  <link rel="stylesheet" href="styles.css" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
@@ -27,10 +22,10 @@
   <!-- Header -->
   <header class="header">
     <div class="container header-container">
-      <img src="logo-nwc-final.png" alt="New Wave Capital Logo" class="logo" />
+      <img src="logo-nwc-final.png" alt="NWC Logo" class="logo" />
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">Who We Are</a></li>
           <li><a href="leadership.html">Leadership</a></li>
           <li><a href="apply.html">Apply</a></li>
@@ -43,27 +38,81 @@
   <section class="hero-background">
     <div class="overlay">
       <div class="hero-content" data-aos="fade-up">
-        <img src="logo-nwc-final.png" alt="New Wave Capital Logo" class="main-logo" />
+        <img src="logo-nwc-final.png" alt="Logo" class="main-logo" />
         <h1>New Wave Capital</h1>
-        <p>A student-run hedge fund at the University of Michigan Ross School of Business, launching Fall 2025</p>
+        <p>Michigan's Student Hedge Fund • Powered by Ambition, Strategy, and Innovation</p>
         <a href="apply.html" class="btn-primary">Fall 2025 Interest Form</a>
       </div>
     </div>
   </section>
 
-  <!-- Pitch Competition -->
-  <section class="section-alt" id="pitch" data-aos="fade-up">
-    <div class="container pitch-section">
-      <h2 class="section-title">Pitch Competition</h2>
+  <!-- Why Join -->
+  <section class="section-alt" id="why-join">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Why Join New Wave Capital?</h2>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Real Investing Experience</h3>
+          <p>Simulate institutional hedge fund research and portfolio management through desk-level strategy.</p>
+        </div>
+        <div class="card">
+          <h3>Career Development</h3>
+          <p>Weekly education, mentorship, resume support, and access to recruiters from top firms.</p>
+        </div>
+        <div class="card">
+          <h3>$500 Pitch Competition</h3>
+          <p>Win real cash rewards by competing in high-stakes semester-end investment pitch tournaments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlight Pitch Reward -->
+  <section class="section pitch-highlight">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Compete. Win. Lead.</h2>
       <p class="section-description">
-        At the heart of New Wave Capital is our <strong class="highlight">$500 Pitch Prize</strong> — an ultra-competitive semesterly challenge where members present high-conviction, professional-grade investment theses across any strategy or asset class.
+        Every semester culminates in a club-wide pitch competition. First prize? <strong>$500 in cash</strong> and campus-wide recognition.
+        Show your edge and shape our fund’s alpha. 
       </p>
-      <p class="pitch-body">
-        Each semester, all new and returning members are invited to compete in a live pitch competition judged by alumni, faculty, and experienced finance professionals. The winning pitch not only receives <strong>$500 in prize money</strong>, but also recognition across our internal portfolio and social platforms.
-      </p>
-      <p class="pitch-body">
-        Whether you're passionate about public equities, quant strategies, or frontier arbitrage, this is your moment to think independently, pitch aggressively, and win big.
-      </p>
+      <div class="text-center">
+        <a href="apply.html" class="btn-secondary">Submit a Pitch</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Desks Preview -->
+  <section class="section" id="desks-preview">
+    <div class="container" data-aos="fade-up">
+      <h2 class="section-title">Explore Strategy Desks</h2>
+      <p class="section-description">Members collaborate in specialized desks to research, build, and pitch real alpha-driven strategies.</p>
+      <div class="grid-3">
+        <div class="card"><h3>Equity</h3><p>Fundamentals, technicals, and active positioning.</p></div>
+        <div class="card"><h3>Quant</h3><p>Backtested statistical and machine learning systems.</p></div>
+        <div class="card"><h3>Macro</h3><p>Trade interest rates, inflation data, and geopolitics.</p></div>
+      </div>
+      <div class="text-center" style="margin-top: 30px;">
+        <a href="about.html#desks" class="btn-secondary">View All Desks</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quote -->
+  <section class="section-alt" data-aos="fade-up">
+    <div class="container text-center">
+      <blockquote style="font-size: 1.3rem; font-style: italic; color: #ccc;">
+        "New Wave Capital empowers the next generation of hedge fund leaders — through real research, real stakes, and real outcomes."
+      </blockquote>
+      <p style="margin-top: 20px; color: #999;">– Founding Team, New Wave Capital</p>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="section text-center" id="join">
+    <div class="container" data-aos="zoom-in">
+      <h2>Fall 2025: We're Launching</h2>
+      <p class="section-description">Join the founding cohort and help shape Michigan’s most forward-thinking finance community.</p>
+      <a href="apply.html" class="btn-primary">Apply Now</a>
     </div>
   </section>
 
@@ -75,8 +124,6 @@
   </footer>
 
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 1000, once: true });
-  </script>
+  <script>AOS.init({ duration: 900, once: true });</script>
 </body>
 </html>
