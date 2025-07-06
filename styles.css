@@ -209,13 +209,13 @@ footer {
 }
 
 .exec-photo {
-  width: 100%;
-  max-width: 180px;
-  height: 180px;
-  border-radius: 50%;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  margin-bottom: 15px;
-  border: 3px solid #3ca6ff;
+  /* border-radius removed to keep images square */
+  margin-bottom: 12px;
+
+
 }
 
 .linkedin-icon {
