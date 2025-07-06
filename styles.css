@@ -194,8 +194,9 @@ footer {
   font-size: 0.9rem;
 }
 
-/* Executive Board Layout */
-.executive-row {
+
+/* Leadership Grid Layout */
+.leadership-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -203,48 +204,76 @@ footer {
   margin-top: 40px;
 }
 
-.exec-card {
+/* Leader Card Styling */
+.leader-card {
   background-color: #1a1a1a;
-  padding: 20px;
+  color: #f2f2f2;
   border-radius: 8px;
-  width: 220px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  width: 240px;
   text-align: center;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
   transition: transform 0.3s ease;
 }
 
-.exec-card:hover {
+.leader-card:hover {
   transform: translateY(-6px);
 }
 
-.exec-photo {
+.leader-photo {
   width: 100%;
-  height: 220px;
+  height: 240px;
   object-fit: cover;
   border-radius: 6px;
-  margin-bottom: 12px;
+  margin-bottom: 16px;
 }
 
-.exec-card h3 {
-  font-size: 1.1rem;
+.leader-info .role {
+  font-size: 0.95rem;
+  color: #ccc;
   margin-bottom: 4px;
 }
 
-.exec-card p {
-  font-size: 0.95rem;
-  color: #ccc;
+.leader-info .name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: #3ca6ff;
 }
 
-.linkedin-icon {
-  width: 22px;
-  height: 22px;
+.leader-info .name:hover {
+  text-decoration: underline;
+}
+
+.leader-info .details {
+  font-size: 0.9rem;
+  color: #888;
+  margin-top: 4px;
+}
+
+.linkedin-icon-sm {
   margin-top: 8px;
+  width: 20px;
+  height: 20px;
   transition: transform 0.2s ease;
 }
 
-.linkedin-icon:hover {
-  transform: scale(1.15);
+.linkedin-icon-sm:hover {
+  transform: scale(1.1);
 }
+
+/* Responsive Layout */
+@media (max-width: 768px) {
+  .leader-card {
+    width: 100%;
+    max-width: 300px;
+  }
+
+  .leader-photo {
+    height: 200px;
+  }
+}
+
 
 /* Semester Background Overlay */
 .semester-background {
