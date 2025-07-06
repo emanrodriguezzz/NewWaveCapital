@@ -209,13 +209,11 @@ footer {
 }
 
 .exec-photo {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   object-fit: cover;
-  /* border-radius removed to keep images square */
   margin-bottom: 12px;
-
-
+  border-radius: 8px; /* SQUARE image look */
 }
 
 .linkedin-icon {
@@ -227,6 +225,27 @@ footer {
 
 .linkedin-icon:hover {
   transform: scale(1.1);
+}
+
+/* Semester Section Background Image */
+.semester-background {
+  background: url('rossinside.webp') center center/cover no-repeat;
+  position: relative;
+  color: #fff;
+}
+
+.semester-background::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.65); /* dark overlay */
+  z-index: 0;
+}
+
+#semester .container {
+  position: relative;
+  z-index: 1;
 }
 
 /* Responsive */
@@ -255,80 +274,7 @@ footer {
   }
 
   .exec-photo {
-    max-width: 140px;
-    height: 140px;
+    width: 160px;
+    height: 160px;
   }
-  .semester-background {
-  background: url('rossinside.webp') center center/cover no-repeat;
-  position: relative;
-  color: #fff;
-}
-
-.semester-background::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  background: rgba(0, 0, 0, 0.65); /* dark overlay */
-  z-index: 0;
-}
-
-#semester .container {
-  position: relative;
-  z-index: 1;
-}
-  .leadership-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 40px;
-  justify-content: center;
-  margin-top: 40px;
-}
-
-.leader-card {
-  background-color: #fff;
-  color: #111;
-  border-radius: 8px;
-  box-shadow: 0 0 12px rgba(0, 0, 0, 0.08);
-  padding: 20px;
-  text-align: center;
-}
-
-.leader-photo {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 16px;
-}
-
-.leader-info .role {
-  font-size: 0.95rem;
-  color: #555;
-}
-
-.leader-info .name {
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-decoration: none;
-  color: #3ca6ff;
-}
-
-.leader-info .name:hover {
-  text-decoration: underline;
-}
-
-.leader-info .details {
-  font-size: 0.9rem;
-  color: #666;
-  margin-top: 4px;
-}
-
-.linkedin-icon-sm {
-  margin-top: 8px;
-  width: 20px;
-  height: 20px;
-}
-
-
 }
