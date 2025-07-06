@@ -195,37 +195,35 @@ footer {
 }
 
 
-/* Leadership Grid Layout */
+/* Executive Board / Leadership Grid */
 .leadership-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   gap: 40px;
   margin-top: 40px;
+  text-align: center;
 }
 
-/* Leader Card Styling */
 .leader-card {
+  width: 220px;
   background-color: #1a1a1a;
-  color: #f2f2f2;
+  padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-  width: 240px;
-  text-align: center;
-  padding: 20px;
   transition: transform 0.3s ease;
 }
 
 .leader-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-5px);
 }
 
 .leader-photo {
-  width: 100%;
-  height: 240px;
+  width: 160px;
+  height: 160px;
   object-fit: cover;
-  border-radius: 6px;
-  margin-bottom: 16px;
+  border-radius: 8px;
+  margin-bottom: 12px;
 }
 
 .leader-info .role {
@@ -235,10 +233,10 @@ footer {
 }
 
 .leader-info .name {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  text-decoration: none;
   color: #3ca6ff;
+  text-decoration: none;
 }
 
 .leader-info .name:hover {
@@ -246,15 +244,15 @@ footer {
 }
 
 .leader-info .details {
-  font-size: 0.9rem;
-  color: #888;
-  margin-top: 4px;
+  font-size: 0.85rem;
+  color: #999;
+  margin: 4px 0;
 }
 
 .linkedin-icon-sm {
+  width: 22px;
+  height: 22px;
   margin-top: 8px;
-  width: 20px;
-  height: 20px;
   transition: transform 0.2s ease;
 }
 
@@ -262,7 +260,7 @@ footer {
   transform: scale(1.1);
 }
 
-/* Responsive Layout */
+/* Responsive */
 @media (max-width: 768px) {
   .leader-card {
     width: 100%;
@@ -270,8 +268,11 @@ footer {
   }
 
   .leader-photo {
-    height: 200px;
+    width: 140px;
+    height: 140px;
   }
+}
+
 }
 
 
