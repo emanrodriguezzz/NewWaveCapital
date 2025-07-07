@@ -4,30 +4,16 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>New Wave Capital | University of Michigan</title>
-
-  <!-- SEO Metadata -->
-  <meta name="description" content="New Wave Capital is the University of Michigan’s premier hedge fund club, focused on innovative investing and elite financial education.">
-  <meta name="keywords" content="University of Michigan, hedge fund club, student investing, New Wave Capital, Ross finance, quant, private equity">
-  <meta name="author" content="New Wave Capital Club">
-  <link rel="canonical" href="https://newwavecapitalumich.org/" />
-  <meta property="og:title" content="New Wave Capital | UMich Hedge Fund Club">
-  <meta property="og:description" content="A student-run hedge fund club at the University of Michigan simulating real investing through bold, modern strategies.">
-  <meta property="og:image" content="NWC.png">
-  <meta property="og:url" content="https://newwavecapitalumich.org/">
-  <meta name="theme-color" content="#0a0a0a" />
-
-  <!-- Assets -->
-  <link rel="icon" href="NWC.png" type="image/png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="NWC.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 
 <body>
 
   <!-- Header -->
   <header class="header">
-    <div class="container header-container">
+    <div class="header-container">
       <img src="NWC.png" alt="New Wave Capital Logo" class="logo" />
       <nav>
         <ul class="nav-links">
@@ -41,52 +27,66 @@
     </div>
   </header>
 
-  <!-- Hero -->
-<section class="hero-background" style="background: url('ross-building1.jpg') center center/cover no-repeat;">
-  <div class="overlay">
-    <div class="hero-content" data-aos="fade-up">
-      <img src="NWC.png" alt="New Wave Capital Logo" class="main-logo" />
-      <h1>New Wave Capital</h1>
-      <p>A student-run hedge fund at the University of Michigan Ross School of Business, launching Fall 2025</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTN0Z0DUjJYIYdo2poCZwHZxNNJ0vW31mdhk8CB3IAqBOfOg/viewform?usp=sharing&ouid=110356698620308705877" class="btn-primary" target="_blank">Fall 2025 Interest Form</a>
-    </div>
-  </div>
-</section>
-
-
-  <!-- Club Summary -->
-  <section class="section-alt" id="summary">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">Built Like a Real Fund</h2>
-      <p class="section-description">
-        New Wave Capital offers students an authentic hedge fund simulation. Members pitch across desks, manage hypothetical capital allocation, and compete to win a $500 prize each semester for best investment strategy.
-      </p>
+  <!-- Hero Section -->
+  <section class="hero-background">
+    <div class="overlay">
+      <div class="hero-content">
+        <img src="NWC.png" alt="New Wave Capital Logo" class="main-logo" />
+        <h1>New Wave Capital</h1>
+        <p>A student-run hedge fund launching Fall 2025 at Michigan Ross</p>
+        <a href="#competition" class="btn-primary">Learn About the $500 Pitch Competition</a>
+      </div>
     </div>
   </section>
 
-  <!-- Strategy Overview -->
-  <section class="section" id="strategy">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">How It Works</h2>
-      <div class="two-col">
-        <div>
-          <h3>Strategy Desks</h3>
-          <p>Members are placed on desks like Long/Short Equity, Macro, Quant, and Arbitrage. Each team delivers one professional-level pitch per semester with a hedge included.</p>
+  <!-- Competition Highlight -->
+  <section class="section-alt" id="competition">
+    <div class="container">
+      <h2 class="section-title">$500 Pitch Competition</h2>
+      <p class="section-description">
+        Our club simulates a real hedge fund—where members work in strategy desks (Quant, Macro, Long/Short, etc.) and present high-stakes investment pitches each semester. The top pitch wins a $500 cash prize.
+      </p>
+      <div class="grid-3">
+        <div class="card">
+          <h3>Join a Strategy Desk</h3>
+          <p>Work with peers in specialized desks to develop unique theses across asset classes.</p>
         </div>
-        <div>
-          <h3>Pitch Competition</h3>
-          <p>Each semester concludes with a high-stakes pitch competition. The top team wins a $500 cash prize and is honored at the final investment committee dinner.</p>
+        <div class="card">
+          <h3>Pitch Competitively</h3>
+          <p>Deliver investment ideas backed by data, modeling, and an actionable hedge strategy.</p>
+        </div>
+        <div class="card">
+          <h3>Win Recognition</h3>
+          <p>The strongest team each semester wins $500 and semester-wide distinction.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Join CTA -->
-  <section class="section text-center" id="cta">
-    <div class="container" data-aos="zoom-in">
-      <h2>Apply for Fall 2025</h2>
-      <p class="section-description">We are open to all majors. Join the next generation of market innovators at Michigan.</p>
-      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTN0Z0DUjJYIYdo2poCZwHZxNNJ0vW31mdhk8CB3IAqBOfOg/viewform" class="btn-secondary" target="_blank">Submit Interest Form</a>
+  <!-- About Section -->
+  <section class="section" id="about">
+    <div class="container two-col">
+      <div>
+        <h2>Who We Are</h2>
+        <p>
+          Founded by Michigan students with experience at firms like BlackRock and Morgan Stanley, we offer real-world exposure to hedge fund strategy through competitive collaboration and mentorship.
+        </p>
+      </div>
+      <div>
+        <h2>Our Philosophy</h2>
+        <p>
+          We believe in creative freedom, academic rigor, and performance-based evaluation. Members can pitch anything—from options on oil to AI-driven signals—so long as there’s conviction and a clear hedge.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-alt text-center" id="join">
+    <div class="container">
+      <h2>Ready to Compete?</h2>
+      <p class="section-description">We're looking for bold thinkers and sharp investors. Are you in?</p>
+      <a href="apply.html" class="btn-secondary">Apply for Fall 2025</a>
     </div>
   </section>
 
@@ -97,9 +97,5 @@
     </div>
   </footer>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-  <script>
-    AOS.init({ duration: 900, once: true });
-  </script>
 </body>
 </html>
