@@ -88,7 +88,6 @@ body {
 
 /* ========== Hero ========== */
 .hero-background {
-  background: url('ross-building1.jpg') center center/cover no-repeat;
   height: 100vh;
   position: relative;
 }
