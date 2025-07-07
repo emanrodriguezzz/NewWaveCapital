@@ -4,88 +4,201 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Hedge Fund | New Wave Capital</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="icon" href="logo-nwc-final-v2.png" />
+  <link rel="icon" href="logo-nwc-final.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background-color: #0a0a0a;
+      color: #f2f2f2;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
+    }
+
+    .header {
+      background-color: #0a0a0a;
+      padding: 20px 0;
+      border-bottom: 1px solid #1f1f1f;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .logo {
+      width: 60px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 30px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: #f2f2f2;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover,
+    .nav-links .active {
+      color: #3ca6ff;
+    }
+
+    h2.section-title {
+      font-size: 2.4rem;
+      text-align: center;
+      color: #ffffff;
+    }
+
+    p.section-description {
+      text-align: center;
+      color: #cccccc;
+      font-size: 1.1rem;
+      margin-bottom: 50px;
+    }
+
+    .strategy-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 40px;
+    }
+
+    .strategy-card {
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
+    }
+
+    .strategy-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .strategy-img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
+    }
+
+    .strategy-card h3 {
+      color: #3ca6ff;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
+    }
+
+    .strategy-card p {
+      color: #ccc;
+      font-size: 0.95rem;
+    }
+
+    footer {
+      background-color: #0a0a0a;
+      color: #888;
+      text-align: center;
+      padding: 30px 20px;
+      font-size: 0.9rem;
+      border-top: 1px solid #1f1f1f;
+    }
+
+    @media (max-width: 768px) {
+      .nav-links {
+        flex-direction: column;
+        gap: 10px;
+        text-align: right;
+      }
+    }
+  </style>
 </head>
 
 <body>
+
   <!-- Header -->
   <header class="header">
-    <div class="container header-container">
-      <img src="logo-nwc-final-v2.png" alt="New Wave Capital Logo" class="logo" />
+    <div class="header-container">
+      <img src="logo-nwc-final.png" alt="Logo" class="logo" />
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">Who We Are</a></li>
-          <li><a href="hedgefund.html" class="active">Hedge Fund</a></li>
           <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="hedgefund.html" class="active">Hedge Fund</a></li>
           <li><a href="apply.html">Apply</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Hedge Fund Intro -->
-  <section class="section">
-    <div class="container" data-aos="fade-up">
-      <h2 class="section-title">A Student-Run Hedge Fund Experience</h2>
-      <p class="section-description">
-        Members join one of our strategy desks and develop real investment theses, including a required hedge strategy. Each semester culminates in a high-stakes pitch competition, with a <strong>$500 prize</strong> to the top team.
-      </p>
-    </div>
-  </section>
+  <!-- Hedge Fund Section -->
+  <section class="container">
+    <h2 class="section-title">Hedge Fund Strategy Desks</h2>
+    <p class="section-description">
+      New Wave Capital simulates the real-world structure of an elite hedge fund. Members are placed into desks and compete for a $500 top pitch prize.
+    </p>
 
-  <!-- Desk Cards -->
-  <section class="section-alt">
-    <div class="container" data-aos="fade-up">
-      <div class="desk-grid">
+    <div class="strategy-grid">
 
-        <div class="desk-card">
-          <img src="quant.jpg" alt="Quantitative Investing" class="desk-img" />
-          <h3>Quantitative Investing</h3>
-          <p>Statistical models and algorithmic trading strategies derived from structured and unstructured data.</p>
-        </div>
-
-        <div class="desk-card">
-          <img src="macro.jpg" alt="Macroeconomic & Policy Strategies" class="desk-img" />
-          <h3>Macroeconomic & Policy Strategies</h3>
-          <p>Positioning driven by global economics, interest rates, policy changes, and geopolitical shifts.</p>
-        </div>
-
-        <div class="desk-card">
-          <img src="longshort.jpg" alt="Long/Short Equity" class="desk-img" />
-          <h3>Long/Short Equity</h3>
-          <p>Stock selection and fundamental valuation paired with short positions to hedge sector or market risk.</p>
-        </div>
-
-        <div class="desk-card">
-          <img src="pe.jpg" alt="Private Equity & Arbitrage" class="desk-img" />
-          <h3>Private Equity & Arbitrage</h3>
-          <p>Investment theses on private companies and cross-asset arbitrage in public or OTC markets.</p>
-        </div>
-
-        <div class="desk-card">
-          <img src="derivatives.jpg" alt="Derivatives" class="desk-img" />
-          <h3>Derivatives</h3>
-          <p>Options, futures, and structured products used to hedge or express asymmetric investment views.</p>
-        </div>
-
-        <div class="desk-card">
-          <img src="wildcard.jpg" alt="Wildcard" class="desk-img" />
-          <h3>Wildcard</h3>
-          <p>Nontraditional pitches: anything from prediction markets to NFTs — built to innovate and challenge norms.</p>
-        </div>
-
+      <div class="strategy-card">
+        <img src="quant.jpg" alt="Quantitative" class="strategy-img">
+        <h3>Quantitative Investing</h3>
+        <p>Statistical modeling, backtesting, and signal-based trading using data and code.</p>
       </div>
+
+      <div class="strategy-card">
+        <img src="macro.jpg" alt="Macro" class="strategy-img">
+        <h3>Macroeconomic & Policy</h3>
+        <p>Interest rates, global policy, and macro catalysts that drive market-wide movement.</p>
+      </div>
+
+      <div class="strategy-card">
+        <img src="longshort.jpg" alt="Long/Short" class="strategy-img">
+        <h3>Long/Short Equity</h3>
+        <p>Fundamental and technical theses that capitalize on valuation inefficiencies.</p>
+      </div>
+
+      <div class="strategy-card">
+        <img src="private.jpg" alt="Private Equity" class="strategy-img">
+        <h3>Private Equity & Arbitrage</h3>
+        <p>Deal modeling, business due diligence, and special situation investing.</p>
+      </div>
+
+      <div class="strategy-card">
+        <img src="derivatives.jpg" alt="Derivatives" class="strategy-img">
+        <h3>Derivatives</h3>
+        <p>Options, futures, and structured bets on volatility, interest rates, and risk.</p>
+      </div>
+
+      <div class="strategy-card">
+        <img src="wildcard.jpg" alt="Wildcard" class="strategy-img">
+        <h3>Wildcard</h3>
+        <p>Unconventional ideas—from crypto to sports analytics—that aim to deliver alpha.</p>
+      </div>
+
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    <div class="container footer-container">
-      <p>&copy; 2025 New Wave Capital – University of Michigan</p>
-    </div>
+    <p>&copy; 2025 New Wave Capital – University of Michigan</p>
   </footer>
+
 </body>
 </html>
