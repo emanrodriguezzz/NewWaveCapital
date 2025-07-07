@@ -10,13 +10,14 @@
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
-      background-color: #0b0c10;
-      color: #f5f5f5;
+      background-color: #0a0a0a;
+      color: #f2f2f2;
     }
 
-    a {
-      text-decoration: none;
-      color: inherit;
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 60px 20px;
     }
 
     .header {
@@ -43,15 +44,14 @@
 
     .nav-links {
       display: flex;
-      gap: 28px;
+      gap: 30px;
       list-style: none;
     }
 
     .nav-links a {
       color: #f2f2f2;
+      text-decoration: none;
       font-weight: 600;
-      font-size: 0.95rem;
-      position: relative;
     }
 
     .nav-links a:hover,
@@ -59,25 +59,17 @@
       color: #3ca6ff;
     }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 80px 20px 40px;
-    }
-
-    .section-title {
+    h2.section-title {
+      font-size: 2.4rem;
       text-align: center;
-      font-size: 2.6rem;
-      font-weight: 700;
-      margin-bottom: 10px;
       color: #ffffff;
     }
 
-    .section-subtitle {
+    p.section-description {
       text-align: center;
       color: #cccccc;
       font-size: 1.1rem;
-      margin-bottom: 60px;
+      margin-bottom: 50px;
     }
 
     .strategy-grid {
@@ -87,65 +79,78 @@
     }
 
     .strategy-card {
-      background-color: #131313;
-      border-radius: 10px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      background-color: #1c1c1c;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+      text-align: center;
+      transition: transform 0.3s ease;
     }
 
     .strategy-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     }
 
     .strategy-img {
       width: 100%;
       height: 180px;
       object-fit: cover;
+      border-radius: 6px;
+      margin-bottom: 15px;
     }
 
-    .strategy-content {
-      padding: 20px;
-      text-align: center;
-    }
-
-    .strategy-content h3 {
+    .strategy-card h3 {
       color: #3ca6ff;
       font-size: 1.2rem;
       margin-bottom: 10px;
     }
 
-    .strategy-content p {
+    .strategy-card p {
       color: #ccc;
       font-size: 0.95rem;
-      line-height: 1.5;
     }
 
     .competition-info {
+      background: url('competition-bg.jpg') center center/cover no-repeat;
+      padding: 60px 30px;
       margin-top: 80px;
+      border-radius: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .competition-info::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background-color: rgba(0, 0, 0, 0.65);
+      z-index: 0;
+    }
+
+    .competition-info .content {
+      position: relative;
+      z-index: 1;
       text-align: center;
       max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
+      margin: 0 auto;
     }
 
     .competition-info h3 {
-      font-size: 1.8rem;
+      font-size: 1.9rem;
       color: #3ca6ff;
       margin-bottom: 20px;
     }
 
     .competition-info p {
       font-size: 1.05rem;
-      color: #cccccc;
+      color: #f2f2f2;
       line-height: 1.7;
       margin-bottom: 20px;
     }
 
     footer {
       background-color: #0a0a0a;
-      color: #888888;
+      color: #888;
       text-align: center;
       padding: 30px 20px;
       font-size: 0.9rem;
@@ -155,22 +160,15 @@
     @media (max-width: 768px) {
       .nav-links {
         flex-direction: column;
-        gap: 12px;
-        align-items: flex-end;
-      }
-
-      .strategy-content h3 {
-        font-size: 1.1rem;
-      }
-
-      .strategy-content p {
-        font-size: 0.9rem;
+        gap: 10px;
+        text-align: right;
       }
     }
   </style>
 </head>
 
 <body>
+
   <!-- Header -->
   <header class="header">
     <div class="header-container">
@@ -187,77 +185,67 @@
     </div>
   </header>
 
-  <!-- Strategy Section -->
+  <!-- Hedge Fund Section -->
   <section class="container">
     <h2 class="section-title">Hedge Fund Strategy Desks</h2>
-    <p class="section-subtitle">
-      Simulating the real-world structure of a modern hedge fund, New Wave Capital offers students deep experience in applied investing.
+    <p class="section-description">
+      New Wave Capital simulates the real-world structure of an elite hedge fund. Members are placed into desks and compete for a $500 top pitch prize.
     </p>
 
     <div class="strategy-grid">
-
       <div class="strategy-card">
         <img src="quant.jpg" alt="Quantitative" class="strategy-img">
-        <div class="strategy-content">
-          <h3>Quantitative Investing</h3>
-          <p>Backtested models and signal-driven strategies using statistics and Python to find consistent alpha.</p>
-        </div>
+        <h3>Quantitative Investing</h3>
+        <p>Statistical modeling, backtesting, and signal-based trading using data and code.</p>
       </div>
 
       <div class="strategy-card">
-        <img src="macro.jpg" alt="Macroeconomic" class="strategy-img">
-        <div class="strategy-content">
-          <h3>Macroeconomic & Policy</h3>
-          <p>Monetary policy, interest rate cycles, global catalysts, and cross-asset positioning on macro themes.</p>
-        </div>
+        <img src="macro.jpg" alt="Macro" class="strategy-img">
+        <h3>Macroeconomic & Policy</h3>
+        <p>Interest rates, global policy, and macro catalysts that drive market-wide movement.</p>
       </div>
 
       <div class="strategy-card">
         <img src="longshort.jpg" alt="Long/Short" class="strategy-img">
-        <div class="strategy-content">
-          <h3>Long/Short Equity</h3>
-          <p>Company-specific fundamental or technical theses with asymmetric upside and required downside hedging.</p>
-        </div>
+        <h3>Long/Short Equity</h3>
+        <p>Fundamental and technical theses that capitalize on valuation inefficiencies.</p>
       </div>
 
       <div class="strategy-card">
         <img src="pe.jpg" alt="Private Equity" class="strategy-img">
-        <div class="strategy-content">
-          <h3>Private Equity & Arbitrage</h3>
-          <p>Deal analysis, special situations, mispriced M&A, and multi-asset arbitrage concepts for compounding return.</p>
-        </div>
+        <h3>Private Equity & Arbitrage</h3>
+        <p>Deal modeling, business due diligence, and special situation investing.</p>
       </div>
 
       <div class="strategy-card">
         <img src="derivatives.jpg" alt="Derivatives" class="strategy-img">
-        <div class="strategy-content">
-          <h3>Derivatives</h3>
-          <p>Creative optionality and tail-risk hedging using volatility surfaces, futures curves, and structured trades.</p>
-        </div>
+        <h3>Derivatives</h3>
+        <p>Options, futures, and structured bets on volatility, interest rates, and risk.</p>
       </div>
 
       <div class="strategy-card">
         <img src="wildcard.jpg" alt="Wildcard" class="strategy-img">
-        <div class="strategy-content">
-          <h3>Wildcard</h3>
-          <p>Unconventional assets—crypto, sports models, machine learning—all welcome with strong rationale.</p>
-        </div>
+        <h3>Wildcard</h3>
+        <p>Unconventional ideas—from crypto to sports analytics—that aim to deliver alpha.</p>
       </div>
     </div>
+  </section>
 
-    <div class="competition-info">
+  <!-- Pitch Competition Section -->
+  <section class="competition-info">
+    <div class="content">
       <h3>$500 Pitch Competition</h3>
       <p>
         Each desk competes to deliver the strongest investment thesis of the semester. Every pitch must include a clear return profile and a well-thought-out hedge strategy.
       </p>
       <p>
-        A portfolio committee of advanced members will help ensure desk diversification and cross-asset balance—treating the fund like real capital is being allocated.
+        A portfolio committee of experienced members ensures desk diversification and simulates capital allocation across sectors.
       </p>
       <p>
-        Any asset class, strategy, or framework is allowed—we value bold thinking and risk-adjusted creativity. Our north star: beat the S&P 500.
+        Any asset class, strategy, or creative pitch is welcome. We value innovation, bold ideas, and rigorous thinking.
       </p>
       <p>
-        The top pitch wins a $500 prize and is recognized as the leading investor of the semester.
+        The ultimate goal: beat the S&P 500. The best pitch wins $500 and earns semester-wide recognition.
       </p>
     </div>
   </section>
@@ -266,5 +254,6 @@
   <footer>
     <p>&copy; 2025 New Wave Capital – University of Michigan</p>
   </footer>
+
 </body>
 </html>
