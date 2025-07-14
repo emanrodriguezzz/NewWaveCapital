@@ -64,6 +64,7 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 20px;
+  flex-wrap: wrap;
 }
 
 .logo {
@@ -75,6 +76,7 @@ body {
   display: flex;
   gap: 30px;
   list-style: none;
+  flex-wrap: wrap;
 }
 
 .nav-links a {
@@ -91,7 +93,7 @@ body {
 
 /* ========== Hero ========== */
 .hero-background {
-  background: url('ross-building1.jpg') center center/cover no-repeat;
+  background: url('wave.jpg') center center/cover no-repeat;
   height: 100vh;
   position: relative;
 }
@@ -313,6 +315,13 @@ footer {
 
   .two-col {
     flex-direction: column;
+    gap: 32px;
+  }
+
+  .grid-3 {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
   }
 
   .hero-content h1 {
@@ -320,6 +329,26 @@ footer {
   }
 
   .hero-content p {
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .main-logo {
+    width: 80px;
+    margin-bottom: 16px;
+  }
+
+  .btn-primary,
+  .btn-secondary {
+    font-size: 1rem;
+    padding: 12px 20px;
+  }
+
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  .section-description {
     font-size: 1rem;
   }
 
@@ -332,4 +361,15 @@ footer {
     width: 140px;
     height: 140px;
   }
+
+  .footer-container {
+    text-align: center;
+  }
+}
+
+/* ========== Image Responsiveness ========== */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
 }
