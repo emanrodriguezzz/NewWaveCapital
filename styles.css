@@ -125,7 +125,8 @@ body {
 
 .main-logo {
   width: 100px;
-  margin-bottom: 20px;
+  margin: 0 auto 20px auto;
+  display: block;
 }
 
 /* ========== Buttons ========== */
@@ -335,7 +336,8 @@ footer {
 
   .main-logo {
     width: 80px;
-    margin-bottom: 16px;
+    margin: 0 auto 16px auto;
+    display: block;
   }
 
   .btn-primary,
