@@ -91,12 +91,7 @@ body {
   color: #3ca6ff;
 }
 
-/* ========== Hero ========== */
-.hero-background {
-  background: url('wave.jpg') center center/cover no-repeat;
-  height: 100vh;
-  position: relative;
-}
+
 
 .overlay {
   background-color: rgba(0, 0, 0, 0.7);
