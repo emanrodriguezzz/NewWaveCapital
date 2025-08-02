@@ -13,7 +13,8 @@
     .leadership-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 110px;
+      column-gap: 60px; /* Increased horizontal gap */
+      row-gap: 60px;    /* Increased vertical gap */
       justify-items: center;
     }
 
@@ -22,13 +23,13 @@
       border-radius: 16px;
       overflow: hidden;
       text-align: center;
-      width: 150%;
+      width: 120%;
       max-width: 600px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
 
     .leader-photo {
-      width: 150%;
+      width: 120%;
       height: 330px;
       object-fit: cover;
     }
@@ -38,14 +39,14 @@
     }
 
     .leader-info .role {
-      font-size: 40px;
+      font-size: 15px;
       color: #555;
       margin: 6px 0;
     }
 
     .leader-info .name {
       display: block;
-      font-size: 40px;
+      font-size: 20px;
       font-weight: 600;
       color: #1a5dab;
       text-decoration: none;
@@ -57,8 +58,8 @@
     }
 
     .linkedin-icon-sm {
-      width: 32px;
-      height: 32px;
+      width: 22px;
+      height: 22px;
       margin-top: 12px;
     }
 
@@ -72,6 +73,21 @@
     /* Desk managers spacing */
     #desk-managers .leadership-grid {
       margin-top: 50px;
+    }
+
+    /* White background for sections */
+    #leadership,
+    #desk-managers,
+    #contact {
+      background: white;
+      color: black;
+      position: relative;
+      padding: 60px 0;
+    }
+
+    /* Contact section styling */
+    #contact .overlay {
+      background-color: white !important;
     }
 
     /* Responsive */
@@ -113,127 +129,125 @@
   </header>
 
   <!-- Leadership Section -->
-  <section class="section-alt" id="leadership" style="background: white; color: black; position: relative;">
-    <div class="overlay" style="background-color: white; padding: 60px 0;">
-      <div class="container">
-        <h2 class="section-title" style="color: black;">Executive Board</h2>
-        <div class="leadership-grid">
+  <section class="section-alt" id="leadership">
+    <div class="container">
+      <h2 class="section-title">Executive Board</h2>
+      <div class="leadership-grid">
 
-          <!-- Jason -->
-          <div class="leader-card">
-            <img src="jason.jpg" alt="Jason Nuridjanian" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Co-Founder & President</p>
-              <a href="https://www.linkedin.com/in/jason-nuridjanian/" target="_blank" class="name">Jason Nuridjanian</a>
-              <a href="https://www.linkedin.com/in/jason-nuridjanian/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
+        <!-- Jason -->
+        <div class="leader-card">
+          <img src="jason.jpg" alt="Jason Nuridjanian" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Co-Founder & President</p>
+            <a href="https://www.linkedin.com/in/jason-nuridjanian/" target="_blank" class="name">Jason Nuridjanian</a>
+            <a href="https://www.linkedin.com/in/jason-nuridjanian/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
           </div>
-
-          <!-- Emanuel -->
-          <div class="leader-card">
-            <img src="Eman.jpeg" alt="Emanuel Rodriguez" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Co-Founder & President</p>
-              <a href="https://www.linkedin.com/in/emanuel-rodriguez-7a93a2318/" target="_blank" class="name">Emanuel Rodriguez</a>
-              <a href="https://www.linkedin.com/in/emanuel-rodriguez-7a93a2318/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Xander -->
-          <div class="leader-card">
-            <img src="xander.jpg" alt="Xander Bartlett" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Co-Founder & President</p>
-              <a href="https://www.linkedin.com/in/xander-bartlett-557054325/" target="_blank" class="name">Xander Bartlett</a>
-              <a href="https://www.linkedin.com/in/xander-bartlett-557054325/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Julia -->
-          <div class="leader-card">
-            <img src="julia.png" alt="Julia Zou" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Vice President of Investments</p>
-              <a href="https://www.linkedin.com/in/juliazou06/" target="_blank" class="name">Julia Zou</a>
-              <a href="https://www.linkedin.com/in/juliazou06/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Merrick -->
-          <div class="leader-card">
-            <img src="merrick.png" alt="Merrick Churnett" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Vice President of Recruitment</p>
-              <a href="https://www.linkedin.com/in/merrick-chernett/" target="_blank" class="name">Merrick Churnett</a>
-              <a href="https://www.linkedin.com/in/merrick-chernett/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Blake -->
-          <div class="leader-card">
-            <img src="blake.jpg" alt="Blake Feinstein" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Vice President of Finance</p>
-              <a href="https://www.linkedin.com/in/blake-feinstein-b41a422ab/" target="_blank" class="name">Blake Feinstein</a>
-              <a href="https://www.linkedin.com/in/blake-feinstein-b41a422ab/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Campbell -->
-          <div class="leader-card">
-            <img src="campbell.png" alt="Campbell McGarrigal" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Vice President of Marketing</p>
-              <a href="https://www.linkedin.com/in/campbell-mcgarrigal-089a85258/" target="_blank" class="name">Campbell McGarrigal</a>
-              <a href="https://www.linkedin.com/in/campbell-mcgarrigal-089a85258/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Hector -->
-          <div class="leader-card">
-            <img src="hector.png" alt="Hector Herrera" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Vice President of Internal Relations</p>
-              <a href="https://www.linkedin.com/in/hectorjesusherrera/" target="_blank" class="name">Hector Herrera</a>
-              <a href="https://www.linkedin.com/in/hectorjesusherrera/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
-          <!-- Val -->
-          <div class="leader-card">
-            <img src="valerie.png" alt="Valerie Sandoval" class="leader-photo">
-            <div class="leader-info">
-              <p class="role">Vice President of Diversity, Equity & Inclusion</p>
-              <a href="https://www.linkedin.com/in/valerie-sandoval-394bb5333/" target="_blank" class="name">Valerie Sandoval</a>
-              <a href="https://www.linkedin.com/in/valerie-sandoval-394bb5333/" target="_blank">
-                <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
-              </a>
-            </div>
-          </div>
-
         </div>
+
+        <!-- Emanuel -->
+        <div class="leader-card">
+          <img src="Eman.jpeg" alt="Emanuel Rodriguez" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Co-Founder & President</p>
+            <a href="https://www.linkedin.com/in/emanuel-rodriguez-7a93a2318/" target="_blank" class="name">Emanuel Rodriguez</a>
+            <a href="https://www.linkedin.com/in/emanuel-rodriguez-7a93a2318/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Xander -->
+        <div class="leader-card">
+          <img src="xander.jpg" alt="Xander Bartlett" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Co-Founder & President</p>
+            <a href="https://www.linkedin.com/in/xander-bartlett-557054325/" target="_blank" class="name">Xander Bartlett</a>
+            <a href="https://www.linkedin.com/in/xander-bartlett-557054325/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Julia -->
+        <div class="leader-card">
+          <img src="julia.png" alt="Julia Zou" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Vice President of Investments</p>
+            <a href="https://www.linkedin.com/in/juliazou06/" target="_blank" class="name">Julia Zou</a>
+            <a href="https://www.linkedin.com/in/juliazou06/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Merrick -->
+        <div class="leader-card">
+          <img src="merrick.png" alt="Merrick Churnett" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Vice President of Recruitment</p>
+            <a href="https://www.linkedin.com/in/merrick-chernett/" target="_blank" class="name">Merrick Churnett</a>
+            <a href="https://www.linkedin.com/in/merrick-chernett/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Blake -->
+        <div class="leader-card">
+          <img src="blake.jpg" alt="Blake Feinstein" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Vice President of Finance</p>
+            <a href="https://www.linkedin.com/in/blake-feinstein-b41a422ab/" target="_blank" class="name">Blake Feinstein</a>
+            <a href="https://www.linkedin.com/in/blake-feinstein-b41a422ab/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Campbell -->
+        <div class="leader-card">
+          <img src="campbell.png" alt="Campbell McGarrigal" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Vice President of Marketing</p>
+            <a href="https://www.linkedin.com/in/campbell-mcgarrigal-089a85258/" target="_blank" class="name">Campbell McGarrigal</a>
+            <a href="https://www.linkedin.com/in/campbell-mcgarrigal-089a85258/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Hector -->
+        <div class="leader-card">
+          <img src="hector.png" alt="Hector Herrera" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Vice President of Internal Relations</p>
+            <a href="https://www.linkedin.com/in/hectorjesusherrera/" target="_blank" class="name">Hector Herrera</a>
+            <a href="https://www.linkedin.com/in/hectorjesusherrera/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
+        <!-- Val -->
+        <div class="leader-card">
+          <img src="valerie.png" alt="Valerie Sandoval" class="leader-photo">
+          <div class="leader-info">
+            <p class="role">Vice President of Diversity, Equity & Inclusion</p>
+            <a href="https://www.linkedin.com/in/valerie-sandoval-394bb5333/" target="_blank" class="name">Valerie Sandoval</a>
+            <a href="https://www.linkedin.com/in/valerie-sandoval-394bb5333/" target="_blank">
+              <img src="linkedin-icon.png" alt="LinkedIn" class="linkedin-icon-sm" />
+            </a>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
   <!-- Desk Managers -->
-  <section class="section-alt" id="desk-managers" style="background: white;">
+  <section class="section-alt" id="desk-managers">
     <div class="container">
       <h2 class="section-title">Desk Managers</h2>
       <div class="leadership-grid">
@@ -303,23 +317,21 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="section-alt" id="contact" style="background: white; color: black; position: relative;">
-    <div class="overlay" style="background-color: white; padding: 60px 0;">
-      <div class="container">
-        <h2 class="section-title" style="color: black;">Contact Us</h2>
-        <p class="section-description" style="color: #333;">We’d love to hear from you. Connect through any of the platforms below.</p>
-        <div class="grid-3">
-          <article class="card" style="background: rgba(0, 0, 0, 0.05); border-radius: 12px; padding: 20px;">
-            <img src="linkedin-icon.png" alt="LinkedIn icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
-            <h3 style="color: black;">LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" rel="noopener noreferrer" style="color: #1a5dab;">linkedin.com/new-wave-capital-umich</a></p>
-          </article>
-          <article class="card" style="background: rgba(0, 0, 0, 0.05); border-radius: 12px; padding: 20px;">
-            <img src="instagram-icon.png" alt="Instagram icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
-            <h3 style="color: black;">Instagram</h3>
-            <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" rel="noopener noreferrer" style="color: #1a5dab;">@newwavecapital.umich</a></p>
-          </article>
-        </div>
+  <section class="section-alt" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contact Us</h2>
+      <p class="section-description" style="color: #333;">We’d love to hear from you. Connect through any of the platforms below.</p>
+      <div class="grid-3">
+        <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
+          <img src="linkedin-icon.png" alt="LinkedIn icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
+          <h3 style="color: black;">LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" rel="noopener noreferrer" style="color: #1a5dab;">linkedin.com/new-wave-capital-umich</a></p>
+        </article>
+        <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
+          <img src="instagram-icon.png" alt="Instagram icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
+          <h3 style="color: black;">Instagram</h3>
+          <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" rel="noopener noreferrer" style="color: #1a5dab;">@newwavecapital.umich</a></p>
+        </article>
       </div>
     </div>
   </section>
