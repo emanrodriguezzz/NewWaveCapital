@@ -13,8 +13,8 @@
     .leadership-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      column-gap: 120px; /* Increased horizontal gap */
-      row-gap: 60px;    /* Increased vertical gap */
+      column-gap: 120px;
+      row-gap: 60px;
       justify-items: center;
     }
 
@@ -68,6 +68,35 @@
       text-align: center;
       margin-bottom: 50px;
       color: #222;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Executive Board background */
+    #leadership {
+      position: relative;
+      padding: 60px 0;
+      background: white;
+      color: black;
+      overflow: hidden;
+    }
+
+    #leadership::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: url('great-wave.jpg') no-repeat center top;
+      background-size: cover;
+      opacity: 0.15;
+      z-index: 1;
+    }
+
+    #leadership .container {
+      position: relative;
+      z-index: 2;
     }
 
     /* Desk managers spacing */
@@ -75,10 +104,7 @@
       margin-top: 50px;
     }
 
-    /* White background for sections */
-    #leadership,
-    #desk-managers,
-    #contact {
+    #desk-managers {
       background: white;
       color: black;
       position: relative;
@@ -86,6 +112,13 @@
     }
 
     /* Contact section styling */
+    #contact {
+      background: white;
+      color: black;
+      position: relative;
+      padding: 60px 0;
+    }
+
     #contact .overlay {
       background-color: white !important;
     }
@@ -133,7 +166,6 @@
     <div class="container">
       <h2 class="section-title">Executive Board</h2>
       <div class="leadership-grid">
-
         <!-- Jason -->
         <div class="leader-card">
           <img src="jason.jpg" alt="Jason Nuridjanian" class="leader-photo">
@@ -241,7 +273,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
@@ -251,7 +282,6 @@
     <div class="container">
       <h2 class="section-title">Desk Managers</h2>
       <div class="leadership-grid">
-
         <!-- Eric -->
         <div class="leader-card">
           <img src="eric.png" alt="Eric Jing" class="leader-photo">
@@ -311,7 +341,6 @@
             </a>
           </div>
         </div>
-
       </div>
     </div>
   </section>
