@@ -9,17 +9,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
   <style>
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #f9f9f9;
-    }
-
-    /* Leadership grid */
+    /* Leadership grid matches screenshot proportions */
     .leadership-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 50px;
+      gap: 40px;
       justify-items: center;
     }
 
@@ -28,19 +22,14 @@
       border-radius: 12px;
       overflow: hidden;
       text-align: center;
-      width: 340px;
+      width: 100%;
+      max-width: 350px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
-      padding-bottom: 18px;
-      transition: transform 0.2s ease-in-out;
-    }
-
-    .leader-card:hover {
-      transform: translateY(-5px);
     }
 
     .leader-photo {
       width: 100%;
-      height: 380px;
+      height: 360px;
       object-fit: cover;
     }
 
@@ -85,14 +74,7 @@
       margin-top: 50px;
     }
 
-    /* Wildcard full-width style */
-    .wildcard {
-      grid-column: 1 / -1;
-      max-width: 100%;
-      width: 100%;
-    }
-
-    /* Responsive design */
+    /* Responsive */
     @media (max-width: 1024px) {
       .leadership-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -102,15 +84,12 @@
     @media (max-width: 768px) {
       .leadership-grid {
         grid-template-columns: 1fr;
-        gap: 30px;
       }
-
       .leader-card {
-        width: 90%;
+        max-width: 90%;
       }
-
-      .wildcard {
-        width: 95%;
+      .leader-photo {
+        height: 300px;
       }
     }
   </style>
@@ -283,8 +262,8 @@
           </div>
         </div>
 
-        <!-- Wildcard Desk Manager -->
-        <div class="leader-card wildcard">
+        <!-- Anthony -->
+        <div class="leader-card">
           <img src="anthony.png" alt="Anthony Pyrozhenko" class="leader-photo">
           <div class="leader-info">
             <p class="role">Wildcard Desk Manager</p>
@@ -329,13 +308,13 @@
       <div class="container">
         <h2 class="section-title" style="color: white;">Contact Us</h2>
         <p class="section-description" style="color: #d0d0d0;">We’d love to hear from you. Connect through any of the platforms below.</p>
-        <div class="grid-3" style="display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
-          <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+        <div class="grid-3">
+          <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
             <img src="linkedin-icon.png" alt="LinkedIn icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
             <h3 style="color: white;">LinkedIn</h3>
             <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" rel="noopener noreferrer" style="color: #3ca6ff;">linkedin.com/new-wave-capital-umich</a></p>
           </article>
-          <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px; width: 250px; text-align: center;">
+          <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
             <img src="instagram-icon.png" alt="Instagram icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
             <h3 style="color: white;">Instagram</h3>
             <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" rel="noopener noreferrer" style="color: #3ca6ff;">@newwavecapital.umich</a></p>
