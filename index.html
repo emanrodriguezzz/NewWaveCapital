@@ -8,39 +8,41 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
 
-  <!-- Open Graph Meta Tags -->
+  <!-- Meta Tags for Previews -->
   <meta property="og:title" content="New Wave Capital | University of Michigan" />
   <meta property="og:description" content="A student-run hedge fund launching Fall 2025 at Michigan Ross." />
   <meta property="og:image" content="https://newwavecapitalumich.org/ross-building1.jpg" />
   <meta property="og:image:secure_url" content="https://newwavecapitalumich.org/ross-building1.jpg" />
-  <meta property="og:image:type" content="image/jpeg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://newwavecapitalumich.org/index.html" />
   <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://newwavecapitalumich.org/index.html" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="New Wave Capital | University of Michigan" />
   <meta name="twitter:description" content="A student-run hedge fund launching Fall 2025 at Michigan Ross." />
   <meta name="twitter:image" content="https://newwavecapitalumich.org/ross-building1.jpg" />
 
   <style>
-    body {
+    * {
       margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
       font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      color: #fff;
+      background-color: #0a0a0a;
+      color: white;
       scroll-behavior: smooth;
     }
 
     header {
-      background: rgba(0, 0, 0, 0.9);
-      padding: 20px 5%;
       position: sticky;
       top: 0;
-      z-index: 1000;
+      background: #000;
+      padding: 16px 5%;
       display: flex;
       justify-content: space-between;
       align-items: center;
+      z-index: 1000;
     }
 
     .nav-links {
@@ -50,67 +52,70 @@
     }
 
     .nav-links a {
-      color: #fff;
+      color: white;
       text-decoration: none;
       font-weight: 500;
-      transition: color 0.3s;
+      transition: color 0.3s ease;
     }
 
-    .nav-links a:hover,
-    .nav-links a.active {
+    .nav-links a.active,
+    .nav-links a:hover {
       color: #00bfff;
     }
 
-    .hero-background {
+    .hero {
       position: relative;
       height: 100vh;
       overflow: hidden;
     }
 
-    .hero-background video {
+    .hero video {
       position: absolute;
+      top: 0; left: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
       z-index: -1;
     }
 
-    .overlay {
+    .hero .overlay {
       position: absolute;
-      background: rgba(0, 0, 0, 0.6);
       width: 100%;
       height: 100%;
+      background: rgba(0,0,0,0.5);
       display: flex;
       align-items: center;
       justify-content: center;
+      flex-direction: column;
       text-align: center;
+      padding: 0 1rem;
     }
 
-    .hero-content {
-      max-width: 800px;
-    }
-
-    .hero-content h1 {
+    .hero h1 {
       font-size: 3rem;
-      margin-bottom: 1rem;
-    }
-
-    .btn-primary,
-    .btn-secondary {
-      padding: 12px 24px;
-      border: none;
-      border-radius: 6px;
-      background: #00bfff;
-      color: #000;
-      font-weight: bold;
-      text-decoration: none;
-      transition: background 0.3s ease;
-      display: inline-block;
+      font-weight: 700;
       margin-top: 1rem;
     }
 
-    .btn-primary:hover,
-    .btn-secondary:hover {
+    .hero p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+      max-width: 600px;
+    }
+
+    .hero .btn-primary {
+      margin-top: 1.5rem;
+      background: #00bfff;
+      color: black;
+      padding: 12px 24px;
+      font-weight: bold;
+      border: none;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+
+    .hero .btn-primary:hover {
       background: #008ecc;
       color: white;
     }
@@ -120,12 +125,7 @@
     }
 
     .section-alt {
-      background: #111;
-    }
-
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
+      background-color: #111;
     }
 
     h2 {
@@ -142,11 +142,11 @@
     }
 
     .card {
-      padding: 24px;
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.1);
       border-radius: 12px;
-      background: rgba(255, 255, 255, 0.05);
+      padding: 24px;
       backdrop-filter: blur(10px);
-      border: 1px solid rgba(255, 255, 255, 0.1);
       transition: transform 0.3s ease;
     }
 
@@ -176,36 +176,52 @@
       text-align: center;
     }
 
+    footer {
+      background: #0a0a0a;
+      color: #aaa;
+      text-align: center;
+      padding: 40px 0;
+    }
+
     .contact-section {
       background-size: cover;
       background-position: center;
       position: relative;
-      color: white;
     }
 
-    .overlay-dark {
+    .contact-section .overlay-dark {
       background: rgba(0, 0, 0, 0.7);
       padding: 60px 0;
-    }
-
-    footer {
-      text-align: center;
-      padding: 40px 0;
-      background: #0a0a0a;
-      color: #999;
     }
 
     .icon {
       width: 40px;
       margin-bottom: 12px;
     }
+
+    .btn-secondary {
+      margin-top: 1rem;
+      background: transparent;
+      border: 2px solid #00bfff;
+      color: #00bfff;
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+
+    .btn-secondary:hover {
+      background: #00bfff;
+      color: #000;
+    }
   </style>
 </head>
 
 <body>
-
+  <!-- Header -->
   <header>
-    <img src="NWC.png" alt="New Wave Capital Logo" class="logo" style="height: 40px;" />
+    <img src="NWC.png" alt="Logo" style="height: 40px;" />
     <nav>
       <ul class="nav-links">
         <li><a href="index.html" class="active">Home</a></li>
@@ -217,43 +233,45 @@
     </nav>
   </header>
 
-  <section class="hero-background">
+  <!-- Hero Section -->
+  <section class="hero">
     <video autoplay muted loop playsinline>
       <source src="wavevideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
     </video>
-    <div class="overlay">
-      <div class="hero-content" data-aos="fade-up">
-        <img src="NWC.png" alt="New Wave Capital Logo" class="main-logo" style="width: 80px;" />
-        <h1>New Wave Capital</h1>
-        <p>A Student-run Hedge Fund Launching Fall 2025 at Michigan Ross</p>
-        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTN0Z0DUjJYIYdo2poCZwHZxNNJ0vW31mdhk8CB3IAqBOfOg/viewform" class="btn-primary" target="_blank">Fall 2025 Interest Form</a>
+    <div class="overlay" data-aos="fade-up">
+      <img src="NWC.png" alt="Logo" style="width: 80px;" />
+      <h1>New Wave Capital</h1>
+      <p>A Student-run Hedge Fund Launching Fall 2025 at Michigan Ross</p>
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTN0Z0DUjJYIYdo2poCZwHZxNNJ0vW31mdhk8CB3IAqBOfOg/viewform" class="btn-primary" target="_blank">Fall 2025 Interest Form</a>
+    </div>
+  </section>
+
+  <!-- Competition -->
+  <section class="section-alt" data-aos="fade-up">
+    <h2>$1,000 Pitch Competition</h2>
+    <p class="text-center">
+      Our club simulates a real hedge fund—where members work in strategy desks (Quant, Macro, Long/Short, etc.) and present high-stakes investment pitches each semester. The top pitch wins a $1,000 cash prize.
+    </p>
+    <div class="grid-3">
+      <div class="card">
+        <h3>Join a Strategy Desk</h3>
+        <p>Work with peers in specialized desks to develop unique theses across asset classes.</p>
+      </div>
+      <div class="card">
+        <h3>Pitch Competitively</h3>
+        <p>Deliver investment ideas backed by data, modeling, and an actionable hedge strategy.</p>
+      </div>
+      <div class="card">
+        <h3>Win Recognition</h3>
+        <p>The strongest team each semester wins $1,000 and semester-wide distinction.</p>
       </div>
     </div>
   </section>
 
-  <section class="section-alt" id="competition" data-aos="fade-up">
-    <div class="container">
-      <h2>$1,000 Pitch Competition</h2>
-      <p class="text-center">Our club simulates a real hedge fund—where members work in strategy desks (Quant, Macro, Long/Short, etc.) and present high-stakes investment pitches each semester. The top pitch wins a $1,000 cash prize.</p>
-      <div class="grid-3">
-        <div class="card">
-          <h3>Join a Strategy Desk</h3>
-          <p>Work with peers in specialized desks to develop unique theses across asset classes.</p>
-        </div>
-        <div class="card">
-          <h3>Pitch Competitively</h3>
-          <p>Deliver investment ideas backed by data, modeling, and an actionable hedge strategy.</p>
-        </div>
-        <div class="card">
-          <h3>Win Recognition</h3>
-          <p>The strongest team each semester wins $1,000 and semester-wide distinction.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section" id="about" data-aos="fade-up">
-    <div class="container two-col">
+  <!-- About -->
+  <section data-aos="fade-up">
+    <div class="two-col">
       <div>
         <h2>Who We Are</h2>
         <p>Founded by Michigan students with experience at firms like BlackRock and Morgan Stanley, we offer real-world exposure to hedge fund strategy through competitive collaboration and mentorship.</p>
@@ -265,58 +283,63 @@
     </div>
   </section>
 
-  <section class="section" id="zan-carver" data-aos="fade-up">
-    <div class="container two-col">
+  <!-- Zan Carver -->
+  <section data-aos="fade-up">
+    <div class="two-col">
       <div>
         <img src="zan-carver.jpg" alt="Zan Carver" class="image-rounded" />
       </div>
       <div>
         <img src="ubs-logo.png" alt="UBS Logo" class="ubs-logo" />
         <h2>Networking Session with Zan Carver</h2>
-        <p>In <strong>Fall 2025</strong>, New Wave Capital will host an exclusive info and networking session with <strong>Zan Carver</strong>, a Senior Wealth Strategy Associate at UBS and a Wall Street + fitness influencer.</p>
-        <p>This session offers students the opportunity to hear Zan's story, ask questions, and connect with a professional who bridges finance and lifestyle branding in a unique way.</p>
+        <p>
+          In <strong>Fall 2025</strong>, New Wave Capital will host an exclusive info and networking session with <strong>Zan Carver</strong>, a Senior Wealth Strategy Associate at UBS and a Wall Street + fitness influencer.
+        </p>
+        <p>
+          This session offers students the opportunity to hear Zan's story, ask questions, and connect with a professional who bridges finance and lifestyle branding in a unique way.
+        </p>
       </div>
     </div>
   </section>
 
-  <section class="section-alt text-center" id="join" data-aos="zoom-in">
-    <div class="container">
-      <h2>Ready to Compete?</h2>
-      <p>We're looking for bold thinkers and sharp investors. Are you in?</p>
-      <a href="apply.html" class="btn-secondary">Apply for Fall 2025</a>
-    </div>
+  <!-- Join CTA -->
+  <section class="section-alt text-center" data-aos="zoom-in">
+    <h2>Ready to Compete?</h2>
+    <p>We're looking for bold thinkers and sharp investors. Are you in?</p>
+    <a href="apply.html" class="btn-secondary">Apply for Fall 2025</a>
   </section>
 
-  <section class="section-alt contact-section" style="background-image: url('ross-building1.jpg');" data-aos="fade-up">
+  <!-- Contact -->
+  <section class="contact-section" style="background-image: url('ross-building1.jpg');" data-aos="fade-up">
     <div class="overlay-dark">
       <div class="container">
         <h2>Contact Us</h2>
-        <p class="text-center">We’d love to hear from you. Connect through any of the platforms below.</p>
+        <p class="text-center">We’d love to hear from you. Connect through the platforms below.</p>
         <div class="grid-3">
           <div class="card">
-            <img src="linkedin-icon.png" alt="LinkedIn" class="icon" />
+            <img src="linkedin-icon.png" class="icon" alt="LinkedIn" />
             <h3>LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" style="color:#3ca6ff;">linkedin.com/new-wave-capital-umich</a></p>
+            <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" style="color: #3ca6ff;">linkedin.com/new-wave-capital-umich</a></p>
           </div>
           <div class="card">
-            <img src="instagram-icon.png" alt="Instagram" class="icon" />
+            <img src="instagram-icon.png" class="icon" alt="Instagram" />
             <h3>Instagram</h3>
-            <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" style="color:#3ca6ff;">@newwavecapital.umich</a></p>
+            <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" style="color: #3ca6ff;">@newwavecapital.umich</a></p>
           </div>
         </div>
       </div>
     </div>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <div class="container">
-      <p>&copy; 2025 New Wave Capital – University of Michigan</p>
-    </div>
+    <p>&copy; 2025 New Wave Capital – University of Michigan</p>
   </footer>
 
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ once: true });
   </script>
 </body>
 </html>
