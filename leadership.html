@@ -8,6 +8,7 @@
   <link rel="icon" href="NWC.png" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
 
+  <!-- ========== Original styles (kept) ========== -->
   <style>
     body {
       background-color: black;
@@ -132,9 +133,220 @@
       }
     }
   </style>
+
+  <!-- ========== Added: same styling/effects used on your animated pages (non-destructive) ========== -->
+  <style>
+    :root{
+      --bg:#080c12;
+      --bg-alt:#0d131c;
+      --text:#e8f0ff;
+      --muted:#a9b7cd;
+      --accent:#3ca6ff;
+      --accent-2:#5bffde;
+      --hot:#ff8a3c;
+      --shadow:0 12px 40px rgba(0,0,0,.35);
+      --radius:14px;
+      --blur:12px;
+    }
+
+    html{scroll-behavior:smooth}
+    body{
+      color: var(--text);
+      background: var(--bg);
+      overflow-x:hidden;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+    }
+
+    /* Ambient gradient fields + animated caustics */
+    body::before, body::after{
+      content:"";
+      position:fixed; inset:-10vmax; pointer-events:none; z-index:-3;
+    }
+    body::before{
+      background:
+        radial-gradient(1200px 600px at 85% -5%, rgba(60,166,255,.18), transparent 60%),
+        radial-gradient(900px 500px at 10% 110%, rgba(91,255,222,.14), transparent 60%),
+        linear-gradient(180deg, rgba(255,255,255,.02), transparent 50%),
+        linear-gradient(180deg, var(--bg), var(--bg-alt));
+      filter: saturate(110%);
+    }
+    body::after{
+      background:
+        conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,.12), rgba(255,255,255,0) 30%, rgba(255,255,255,.12) 60%, rgba(255,255,255,0) 100%),
+        radial-gradient(1200px 900px at 50% 50%, rgba(255,255,255,.04), transparent 60%);
+      mix-blend-mode: overlay;
+      animation: swirl 18s linear infinite;
+      opacity:.25;
+    }
+    @keyframes swirl{ to{ transform: rotate(360deg)} }
+
+    /* Cursor spotlight + star layers */
+    .spotlight{
+      position:fixed; inset:0; pointer-events:none; z-index:-1;
+      background:
+        radial-gradient(300px 300px at var(--mx,50%) var(--my,50%), rgba(60,166,255,.18), transparent 60%),
+        radial-gradient(600px 400px at calc(var(--mx,50%)*.9) calc(var(--my,50%)*1.1), rgba(91,255,222,.12), transparent 60%);
+      transition: background-position .1s;
+    }
+    .stars,.stars2{
+      position:fixed; inset:0; pointer-events:none; z-index:-2;
+      background-repeat:no-repeat; background-size:cover;
+    }
+    .stars{
+      background-image:
+        radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.28) 50%, transparent 51%),
+        radial-gradient(1px 1px at 80% 70%, rgba(255,255,255,.22) 50%, transparent 51%),
+        radial-gradient(1px 1px at 60% 10%, rgba(255,255,255,.18) 50%, transparent 51%),
+        radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,.16) 50%, transparent 51%);
+    }
+    .stars2{
+      filter: blur(.6px) brightness(.9);
+      background-image:
+        radial-gradient(1px 1px at 15% 50%, rgba(255,255,255,.2) 50%, transparent 51%),
+        radial-gradient(1px 1px at 70% 20%, rgba(255,255,255,.18) 50%, transparent 51%),
+        radial-gradient(1px 1px at 40% 85%, rgba(255,255,255,.14) 50%, transparent 51%);
+    }
+
+    /* Header glass upgrade */
+    .header{
+      background: rgba(12,18,27, .45) !important;
+      backdrop-filter: saturate(160%) blur(var(--blur));
+      border-bottom: 1px solid rgba(255,255,255,.08) !important;
+      transition: background .4s ease, border-color .3s ease;
+      position: sticky; top: 0; z-index: 1000;
+    }
+    .header.scrolled{ background: rgba(10,14,20,.78) !important; border-color: rgba(255,255,255,.12) !important }
+    .nav-links a{
+      position:relative;
+      border-radius:10px;
+      transition: color .25s ease, transform .25s ease;
+    }
+    .nav-links a::after{
+      content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      transform:scaleX(0); transform-origin:right; transition: transform .25s ease;
+      border-radius:2px;
+    }
+    .nav-links a:hover{ transform:translateY(-1px) }
+    .nav-links a:hover::after,
+    .nav-links a.active::after{ transform:scaleX(1); transform-origin:left }
+
+    /* Scroll progress bar */
+    .progress{
+      position: fixed; top:0; left:0; height:3px; width:0%;
+      background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--hot));
+      box-shadow: 0 0 18px rgba(60,166,255,.6);
+      z-index:1200;
+      transition: width .1s linear;
+    }
+
+    /* Hero tweaks for readability/animation */
+    .hero{ position: relative; overflow: hidden }
+    .hero::before{
+      content:""; position:absolute; inset:0;
+      background: radial-gradient(60% 60% at 50% 45%, rgba(0,0,0,.1), rgba(0,0,0,.5) 70%);
+      z-index:0;
+    }
+    .hero h1{
+      position: relative; z-index:1;
+      color: var(--text) !important;
+      text-shadow: 0 8px 32px rgba(0,0,0,.6);
+      opacity:0; transform: translateY(10px) scale(.98);
+      animation: heroIn .85s ease .1s forwards;
+    }
+    @keyframes heroIn{
+      from{ opacity:0; transform: translateY(14px) scale(.98) }
+      to{ opacity:1; transform: translateY(0) scale(1) }
+    }
+
+    /* Section visuals */
+    .section-alt{ padding:88px 0; background: linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%) }
+    /* Override accidental black-on-black text */
+    #leadership, #desk-managers, #contact{
+      color: var(--text) !important;
+      background: transparent !important;
+    }
+    .section-title{ color: var(--text) !important }
+
+    /* Reveal/stagger */
+    .reveal{ opacity:0; transform: translateY(22px) scale(.98); }
+    .reveal.revealed{ opacity:1; transform: none; transition: opacity .7s cubic-bezier(.2,.65,.2,1), transform .7s cubic-bezier(.2,.65,.2,1) }
+    .stagger > *{ opacity:0; transform: translateY(16px); }
+    .stagger.revealed > *{
+      opacity:1; transform:none;
+      transition: opacity .6s ease, transform .6s ease;
+    }
+    .stagger.revealed > *:nth-child(1){ transition-delay:.05s }
+    .stagger.revealed > *:nth-child(2){ transition-delay:.12s }
+    .stagger.revealed > *:nth-child(3){ transition-delay:.19s }
+    .stagger.revealed > *:nth-child(4){ transition-delay:.26s }
+    .stagger.revealed > *:nth-child(5){ transition-delay:.33s }
+
+    /* Leader cards — glass, glow, 3D tilt */
+    .leadership-grid{ perspective: 1200px }
+    .leader-card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) !important;
+      border:1px solid rgba(255,255,255,.1);
+      box-shadow: var(--shadow);
+      color: var(--text);
+      position:relative; overflow:hidden; will-change: transform;
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+    }
+    .leader-card::before{
+      content:""; position:absolute; inset:-1px;
+      background: radial-gradient(420px 280px at var(--x,50%) var(--y,50%), rgba(60,166,255,.16), transparent 42%);
+      opacity:0; transition: opacity .25s ease; pointer-events:none;
+    }
+    .leader-card::after{
+      content:""; position:absolute; top:-40%; left:-20%; width:40%; height:180%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.18), transparent);
+      transform: translateX(-120%) rotate(18deg); transition: transform .8s ease;
+      mix-blend-mode: screen; pointer-events:none;
+    }
+    .leader-card:hover{ transform: translateY(-6px) scale(1.01); box-shadow: 0 18px 45px rgba(0,0,0,.38); border-color: rgba(60,166,255,.35) }
+    .leader-card:hover::before{ opacity:.6 }
+    .leader-card:hover::after{ transform: translateX(220%) rotate(18deg) }
+
+    .leader-photo{ display:block }
+    .leader-info .role{ color: var(--muted) !important }
+    .leader-info .name{ color: var(--accent) !important }
+
+    /* Contact cards look like glass */
+    #contact .card{
+      background: rgba(255,255,255,.12) !important;
+      border: 1px solid rgba(255,255,255,.18) !important;
+      border-radius: var(--radius) !important;
+      box-shadow: var(--shadow);
+      color: var(--text) !important;
+      position:relative; overflow:hidden;
+    }
+    #contact .card h3{ color: var(--text) !important }
+    #contact .card::before{
+      content:""; position:absolute; inset:-1px;
+      background: radial-gradient(380px 240px at var(--x,50%) var(--y,50%), rgba(60,166,255,.15), transparent 45%);
+      opacity:0; transition: opacity .25s ease;
+    }
+    #contact .card:hover::before{ opacity:.6 }
+    #contact a{ color: var(--accent) !important; text-decoration: none }
+
+    /* Focus styles */
+    a:focus-visible, button:focus-visible{ outline: 3px solid var(--accent); outline-offset:2px; border-radius:10px }
+
+    /* Reduced motion */
+    @media (prefers-reduced-motion: reduce){
+      *{ animation: none !important; transition: none !important; scroll-behavior:auto }
+      .spotlight, .stars, .stars2{ display:none !important }
+    }
+  </style>
 </head>
 
 <body>
+  <!-- Decorative UX layers -->
+  <div class="progress" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="stars2" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+
   <!-- Header -->
   <header class="header">
     <div class="container header-container">
@@ -152,16 +364,16 @@
   </header>
 
   <!-- Hero Section -->
-  <section class="hero">
+  <section class="hero reveal">
     <h1>NWC Executive Board</h1>
   </section>
 
   <!-- Leadership Section -->
-  <section class="section-alt" id="leadership">
+  <section class="section-alt reveal" id="leadership">
     <div class="container">
-      <div class="leadership-grid">
+      <div class="leadership-grid stagger">
         <!-- Jason -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="jason.jpg" alt="Jason Nuridjanian" class="leader-photo">
           <div class="leader-info">
             <p class="role">Co-Founder & President</p>
@@ -173,7 +385,7 @@
         </div>
 
         <!-- Emanuel -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="Eman.jpeg" alt="Emanuel Rodriguez" class="leader-photo">
           <div class="leader-info">
             <p class="role">Co-Founder & President</p>
@@ -185,7 +397,7 @@
         </div>
 
         <!-- Xander -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="xander.jpg" alt="Xander Bartlett" class="leader-photo">
           <div class="leader-info">
             <p class="role">Co-Founder & President</p>
@@ -197,7 +409,7 @@
         </div>
 
         <!-- Julia -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="julia.png" alt="Julia Zou" class="leader-photo">
           <div class="leader-info">
             <p class="role">Vice President of Investments</p>
@@ -209,7 +421,7 @@
         </div>
 
         <!-- Merrick -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="merrick.png" alt="Merrick Chernett" class="leader-photo">
           <div class="leader-info">
             <p class="role">Vice President of Recruitment</p>
@@ -221,7 +433,7 @@
         </div>
 
         <!-- Blake -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="blake.jpg" alt="Blake Feinstein" class="leader-photo">
           <div class="leader-info">
             <p class="role">Vice President of Finance</p>
@@ -233,7 +445,7 @@
         </div>
 
         <!-- Campbell -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="campbell.png" alt="Campbell McGarrigal" class="leader-photo">
           <div class="leader-info">
             <p class="role">Vice President of Marketing</p>
@@ -245,7 +457,7 @@
         </div>
 
         <!-- Joaquin -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="joaquin.jpeg" alt="Joaquin Chiriboga" class="leader-photo">
           <div class="leader-info">
             <p class="role">Vice President of External Relations</p>
@@ -257,7 +469,7 @@
         </div>
 
         <!-- Hector -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="hector.png" alt="Hector Herrera" class="leader-photo">
           <div class="leader-info">
             <p class="role">Vice President of Internal Relations</p>
@@ -269,7 +481,7 @@
         </div>
 
         <!-- Val -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="valerie.png" alt="Valerie Sandoval" class="leader-photo">
           <div class="leader-info">
             <p class="role">Diversity, Equity & Inclusion Chair</p>
@@ -280,7 +492,7 @@
           </div>
         </div>
 
-          <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="brown.jpeg" alt="Alexander Brown" class="leader-photo">
           <div class="leader-info">
             <p class="role">Co-Educator</p>
@@ -291,10 +503,8 @@
           </div>
         </div>
 
-          
-
         <!-- Desk Managers -->
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="eric.png" alt="Eric Jing" class="leader-photo">
           <div class="leader-info">
             <p class="role">Quant Desk Manager</p>
@@ -305,7 +515,7 @@
           </div>
         </div>
 
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="alex.png" alt="Alex Yesilyurt" class="leader-photo">
           <div class="leader-info">
             <p class="role">Quant Desk Manager</p>
@@ -316,7 +526,7 @@
           </div>
         </div>
 
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="anthony.png" alt="Anthony Pyrozhenko" class="leader-photo">
           <div class="leader-info">
             <p class="role">Wildcard Desk Manager</p>
@@ -327,7 +537,7 @@
           </div>
         </div>
 
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="jackxu.jpeg" alt="Jack Xu" class="leader-photo">
           <div class="leader-info">
             <p class="role">Private Markets Desk Manager</p>
@@ -338,7 +548,7 @@
           </div>
         </div>
 
-        <div class="leader-card">
+        <div class="leader-card tilt">
           <img src="noah.png" alt="Noah Perez" class="leader-photo">
           <div class="leader-info">
             <p class="role">Co-Educator</p>
@@ -353,30 +563,121 @@
   </section>
 
   <!-- Contact Section -->
-  <section class="section-alt" id="contact">
+  <section class="section-alt reveal" id="contact">
     <div class="container">
       <h2 class="section-title">Contact Us</h2>
-      <p class="section-description" style="color: #333;">We’d love to hear from you. Connect through any of the platforms below.</p>
+      <p class="section-description" style="color: var(--muted);">We’d love to hear from you. Connect through any of the platforms below.</p>
       <div class="grid-3">
         <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
           <img src="linkedin-icon.png" alt="LinkedIn icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
-          <h3 style="color: black;">LinkedIn</h3>
-          <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" rel="noopener noreferrer" style="color: #1a5dab;">linkedin.com/new-wave-capital-umich</a></p>
+          <h3 style="color: var(--text);">LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">linkedin.com/new-wave-capital-umich</a></p>
         </article>
         <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
           <img src="instagram-icon.png" alt="Instagram icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
-          <h3 style="color: black;">Instagram</h3>
-          <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" rel="noopener noreferrer" style="color: #1a5dab;">@newwavecapital.umich</a></p>
+          <h3 style="color: var(--text);">Instagram</h3>
+          <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" rel="noopener noreferrer" style="color: var(--accent);">@newwavecapital.umich</a></p>
         </article>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer>
+  <footer class="reveal">
     <div class="container footer-container">
       <p>&copy; 2025 New Wave Capital – University of Michigan</p>
     </div>
   </footer>
+
+  <!-- Interactions & effects -->
+  <script>
+    /* Progress bar */
+    const progress = document.querySelector('.progress');
+    const setProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      if(progress) progress.style.width = scrolled + '%';
+    };
+    setProgress(); addEventListener('scroll', setProgress, {passive:true});
+
+    /* Header glass on scroll */
+    const header = document.querySelector('.header');
+    const onScrollHeader = () => {
+      if(!header) return;
+      if(window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    onScrollHeader();
+    addEventListener('scroll', onScrollHeader, {passive:true});
+
+    /* Reveal/stagger */
+    const revealEls = [...document.querySelectorAll('.reveal, .stagger')];
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .14, rootMargin: '0px 0px -10% 0px'});
+    revealEls.forEach(el=>io.observe(el));
+
+    /* Cursor spotlight */
+    const root = document.documentElement;
+    const spotlight = document.querySelector('.spotlight');
+    let rafId = null;
+    let mx = innerWidth/2, my = innerHeight/2;
+    const updateMouseVars = () => {
+      root.style.setProperty('--mx', mx + 'px');
+      root.style.setProperty('--my', my + 'px');
+      if(spotlight){
+        spotlight.style.setProperty('--mx', mx + 'px');
+        spotlight.style.setProperty('--my', my + 'px');
+      }
+      rafId = null;
+    };
+    addEventListener('pointermove', (e)=>{
+      mx = e.clientX; my = e.clientY;
+      if(!rafId) rafId = requestAnimationFrame(updateMouseVars);
+    }, {passive:true});
+
+    /* Hover light tracking */
+    const trackXY = (e, el) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--x', `${e.clientX - r.left}px`);
+      el.style.setProperty('--y', `${e.clientY - r.top}px`);
+    };
+    document.addEventListener('pointermove', (e)=>{
+      document.querySelectorAll('.leader-card, #contact .card').forEach(el=>{
+        const r = el.getBoundingClientRect();
+        if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom){
+          trackXY(e, el);
+        }
+      });
+    }, {passive:true});
+
+    /* 3D tilt */
+    function makeTilt(el){
+      const damp = 12;
+      el.addEventListener('pointermove', (e)=>{
+        const r = el.getBoundingClientRect();
+        const rx = ((e.clientY - r.top)/r.height - .5) * -damp;
+        const ry = ((e.clientX - r.left)/r.width - .5) * damp;
+        el.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+      el.addEventListener('pointerleave', ()=>{ el.style.transform = '' });
+    }
+    document.querySelectorAll('.tilt').forEach(makeTilt);
+
+    /* Parallax stars */
+    const stars = document.querySelector('.stars');
+    const stars2 = document.querySelector('.stars2');
+    const onScrollParallax = () => {
+      const y = window.scrollY || 0;
+      if(stars)  stars.style.transform  = `translateY(${y * 0.08}px)`;
+      if(stars2) stars2.style.transform = `translateY(${y * 0.14}px)`;
+    };
+    onScrollParallax(); addEventListener('scroll', onScrollParallax, {passive:true});
+  </script>
 </body>
 </html>
