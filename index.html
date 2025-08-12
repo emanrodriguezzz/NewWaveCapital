@@ -482,21 +482,31 @@ text-align: center; color: white; line-height: 1.5;">
     revealEls.forEach(el=>io.observe(el));
 
     /* ===== Split text reveal for hero heading & subhead ===== */
-    function splitText(el){
-      if(!el) return;
-      const text = el.textContent.trim();
-      el.textContent = '';
-      el.classList.add('reveal-chars');
-      [...text].forEach((ch, i)=>{
-        const span = document.createElement('span');
-        span.className = 'char';
-        span.style.animationDelay = (i * 0.025) + 's';
-        span.textContent = ch;
-        el.appendChild(span);
-      });
+    /* ===== Split text reveal for hero heading & subhead (with space handling) ===== */
+function splitText(el) {
+  if (!el) return;
+  const text = el.textContent.trim();
+  el.textContent = '';
+  el.classList.add('reveal-chars');
+
+  [...text].forEach((ch, i) => {
+    const span = document.createElement('span');
+    span.className = 'char';
+    span.style.animationDelay = (i * 0.025) + 's';
+
+    if (ch === ' ') {
+      span.innerHTML = '&nbsp;'; // preserve space visually
+    } else {
+      span.textContent = ch;
     }
-    splitText(document.querySelector('.hero-content h1'));
-    splitText(document.querySelector('.hero-content p'));
+
+    el.appendChild(span);
+  });
+}
+
+splitText(document.querySelector('.hero-content h1'));
+splitText(document.querySelector('.hero-content p'));
+
 
     /* ===== Cursor spotlight & interactive lighting ===== */
     const root = document.documentElement;
