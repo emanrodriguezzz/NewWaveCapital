@@ -10,9 +10,7 @@
 
   <!-- ========== Original styles (kept) ========== -->
   <style>
-    body {
-      background-color: black;
-    }
+    body { background-color: black; }
 
     /* Hero section */
     .hero {
@@ -23,7 +21,6 @@
       justify-content: center;
       align-items: center;
     }
-
     .hero h1 {
       color: black;
       font-size: 48px;
@@ -41,7 +38,6 @@
       justify-items: center;
       margin-top: 50px;
     }
-
     .leader-card {
       background: #fff;
       border-radius: 16px;
@@ -51,116 +47,55 @@
       max-width: 600px;
       box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
     }
-
-    .leader-photo {
-      width: 120%;
-      height: 330px;
-      object-fit: cover;
-    }
-
-    .leader-info {
-      padding: 18px;
-    }
-
-    .leader-info .role {
-      font-size: 30px;
-      color: #555;
-      margin: 6px 0;
-    }
-
+    .leader-photo { width: 120%; height: 330px; object-fit: cover; }
+    .leader-info { padding: 18px; }
+    .leader-info .role { font-size: 30px; color: #555; margin: 6px 0; }
     .leader-info .name {
-      display: block;
-      font-size: 20px;
-      font-weight: 600;
-      color: #1a5dab;
-      text-decoration: none;
-      margin: 6px 0;
+      display: block; font-size: 20px; font-weight: 600; color: #1a5dab;
+      text-decoration: none; margin: 6px 0;
     }
-
-    .leader-info .name:hover {
-      text-decoration: underline;
-    }
-
-    .linkedin-icon-sm {
-      width: 22px;
-      height: 22px;
-      margin-top: 12px;
-    }
+    .leader-info .name:hover { text-decoration: underline; }
+    .linkedin-icon-sm { width: 22px; height: 22px; margin-top: 12px; }
 
     /* Section title spacing */
-    .section-title {
-      text-align: center;
-      margin-bottom: 50px;
-      color: #222;
-    }
+    .section-title { text-align: center; margin-bottom: 50px; color: #222; }
 
     /* Desk managers spacing */
-    #desk-managers .leadership-grid {
-      margin-top: 50px;
-    }
+    #desk-managers .leadership-grid { margin-top: 50px; }
 
     /* Black background for sections */
-    #leadership,
-    #desk-managers,
-    #contact {
-      background: black;
-      color: black;
-      position: relative;
-      padding: 60px 0;
+    #leadership, #desk-managers, #contact {
+      background: black; color: black; position: relative; padding: 60px 0;
     }
 
     /* Contact section styling */
-    #contact .overlay {
-      background-color: black !important;
-    }
+    #contact .overlay { background-color: black !important; }
 
-    /* Responsive */
-    @media (max-width: 1024px) {
-      .leadership-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
+    /* Responsive (original) */
+    @media (max-width: 1024px) { .leadership-grid { grid-template-columns: repeat(2, 1fr); } }
     @media (max-width: 768px) {
-      .leadership-grid {
-        grid-template-columns: 1fr;
-      }
-      .leader-card {
-        max-width: 90%;
-      }
-      .leader-photo {
-        height: 300px;
-      }
+      .leadership-grid { grid-template-columns: 1fr; }
+      .leader-card { max-width: 90%; }
+      .leader-photo { height: 300px; }
     }
   </style>
 
-  <!-- ========== Added: same styling/effects used on your animated pages (non-destructive) ========== -->
+  <!-- ========== Animated site styling/effects (same system as other pages) ========== -->
   <style>
     :root{
-      --bg:#080c12;
-      --bg-alt:#0d131c;
-      --text:#e8f0ff;
-      --muted:#a9b7cd;
-      --accent:#3ca6ff;
-      --accent-2:#5bffde;
-      --hot:#ff8a3c;
-      --shadow:0 12px 40px rgba(0,0,0,.35);
-      --radius:14px;
-      --blur:12px;
+      --bg:#080c12; --bg-alt:#0d131c; --text:#e8f0ff; --muted:#a9b7cd;
+      --accent:#3ca6ff; --accent-2:#5bffde; --hot:#ff8a3c;
+      --shadow:0 12px 40px rgba(0,0,0,.35); --radius:14px; --blur:12px;
     }
-
     html{scroll-behavior:smooth}
     body{
-      color: var(--text);
-      background: var(--bg);
-      overflow-x:hidden;
-      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color: var(--text); background: var(--bg); overflow-x:hidden;
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
     }
 
     /* Ambient gradient fields + animated caustics */
     body::before, body::after{
-      content:"";
-      position:fixed; inset:-10vmax; pointer-events:none; z-index:-3;
+      content:""; position:fixed; inset:-10vmax; pointer-events:none; z-index:-3;
     }
     body::before{
       background:
@@ -174,9 +109,7 @@
       background:
         conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,.12), rgba(255,255,255,0) 30%, rgba(255,255,255,.12) 60%, rgba(255,255,255,0) 100%),
         radial-gradient(1200px 900px at 50% 50%, rgba(255,255,255,.04), transparent 60%);
-      mix-blend-mode: overlay;
-      animation: swirl 18s linear infinite;
-      opacity:.25;
+      mix-blend-mode: overlay; animation: swirl 18s linear infinite; opacity:.25;
     }
     @keyframes swirl{ to{ transform: rotate(360deg)} }
 
@@ -217,78 +150,59 @@
     }
     .header.scrolled{ background: rgba(10,14,20,.78) !important; border-color: rgba(255,255,255,.12) !important }
     .nav-links a{
-      position:relative;
-      border-radius:10px;
-      transition: color .25s ease, transform .25s ease;
+      position:relative; border-radius:10px; transition: color .25s ease, transform .25s ease;
     }
     .nav-links a::after{
       content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
       background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      transform:scaleX(0); transform-origin:right; transition: transform .25s ease;
-      border-radius:2px;
+      transform:scaleX(0); transform-origin:right; transition: transform .25s ease; border-radius:2px;
     }
     .nav-links a:hover{ transform:translateY(-1px) }
-    .nav-links a:hover::after,
-    .nav-links a.active::after{ transform:scaleX(1); transform-origin:left }
+    .nav-links a:hover::after, .nav-links a.active::after{ transform:scaleX(1); transform-origin:left }
 
     /* Scroll progress bar */
     .progress{
       position: fixed; top:0; left:0; height:3px; width:0%;
       background: linear-gradient(90deg, var(--accent), var(--accent-2), var(--hot));
-      box-shadow: 0 0 18px rgba(60,166,255,.6);
-      z-index:1200;
-      transition: width .1s linear;
+      box-shadow: 0 0 18px rgba(60,166,255,.6); z-index:1200; transition: width .1s linear;
     }
 
-    /* Hero tweaks for readability/animation */
+    /* Hero readability/animation */
     .hero{ position: relative; overflow: hidden }
     .hero::before{
       content:""; position:absolute; inset:0;
-      background: radial-gradient(60% 60% at 50% 45%, rgba(0,0,0,.1), rgba(0,0,0,.5) 70%);
-      z-index:0;
+      background: radial-gradient(60% 60% at 50% 45%, rgba(0,0,0,.1), rgba(0,0,0,.5) 70%); z-index:0;
     }
     .hero h1{
-      position: relative; z-index:1;
-      color: var(--text) !important;
+      position: relative; z-index:1; color: var(--text) !important;
       text-shadow: 0 8px 32px rgba(0,0,0,.6);
       opacity:0; transform: translateY(10px) scale(.98);
       animation: heroIn .85s ease .1s forwards;
     }
-    @keyframes heroIn{
-      from{ opacity:0; transform: translateY(14px) scale(.98) }
-      to{ opacity:1; transform: translateY(0) scale(1) }
-    }
+    @keyframes heroIn{ from{opacity:0; transform: translateY(14px) scale(.98)} to{opacity:1; transform:none} }
 
     /* Section visuals */
     .section-alt{ padding:88px 0; background: linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%) }
-    /* Override accidental black-on-black text */
-    #leadership, #desk-managers, #contact{
-      color: var(--text) !important;
-      background: transparent !important;
-    }
+    #leadership, #desk-managers, #contact{ color: var(--text) !important; background: transparent !important; }
     .section-title{ color: var(--text) !important }
 
     /* Reveal/stagger */
     .reveal{ opacity:0; transform: translateY(22px) scale(.98); }
     .reveal.revealed{ opacity:1; transform: none; transition: opacity .7s cubic-bezier(.2,.65,.2,1), transform .7s cubic-bezier(.2,.65,.2,1) }
     .stagger > *{ opacity:0; transform: translateY(16px); }
-    .stagger.revealed > *{
-      opacity:1; transform:none;
-      transition: opacity .6s ease, transform .6s ease;
-    }
+    .stagger.revealed > *{ opacity:1; transform:none; transition: opacity .6s ease, transform .6s ease; }
     .stagger.revealed > *:nth-child(1){ transition-delay:.05s }
     .stagger.revealed > *:nth-child(2){ transition-delay:.12s }
     .stagger.revealed > *:nth-child(3){ transition-delay:.19s }
     .stagger.revealed > *:nth-child(4){ transition-delay:.26s }
     .stagger.revealed > *:nth-child(5){ transition-delay:.33s }
 
-    /* Leader cards — glass, glow, 3D tilt */
+    /* Leader cards — base glass/glow (calmer by overrides later) */
     .leadership-grid{ perspective: 1200px }
     .leader-card{
       background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03)) !important;
       border:1px solid rgba(255,255,255,.1);
-      box-shadow: var(--shadow);
-      color: var(--text);
+      box-shadow: var(--shadow); color: var(--text);
       position:relative; overflow:hidden; will-change: transform;
       transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
     }
@@ -311,13 +225,12 @@
     .leader-info .role{ color: var(--muted) !important }
     .leader-info .name{ color: var(--accent) !important }
 
-    /* Contact cards look like glass */
+    /* Contact cards */
     #contact .card{
       background: rgba(255,255,255,.12) !important;
       border: 1px solid rgba(255,255,255,.18) !important;
       border-radius: var(--radius) !important;
-      box-shadow: var(--shadow);
-      color: var(--text) !important;
+      box-shadow: var(--shadow); color: var(--text) !important;
       position:relative; overflow:hidden;
     }
     #contact .card h3{ color: var(--text) !important }
@@ -329,14 +242,37 @@
     #contact .card:hover::before{ opacity:.6 }
     #contact a{ color: var(--accent) !important; text-decoration: none }
 
-    /* Focus styles */
-    a:focus-visible, button:focus-visible{ outline: 3px solid var(--accent); outline-offset:2px; border-radius:10px }
-
     /* Reduced motion */
     @media (prefers-reduced-motion: reduce){
       *{ animation: none !important; transition: none !important; scroll-behavior:auto }
       .spotlight, .stars, .stars2{ display:none !important }
     }
+  </style>
+
+  <!-- ========== CALM PROFESSIONAL OVERRIDES + MOBILE FIXES ========== -->
+  <style>
+    /* Keep e-board cards still (no movement/tilt) */
+    .leader-card,
+    .leader-card:hover { transform: none !important; box-shadow: 0 8px 24px rgba(0,0,0,.25) !important; }
+    .leader-card::after { display:none !important; }     /* remove flashy sweep */
+    .leader-card::before { opacity:.12; }                /* subtle glow */
+    .leader-card:hover::before { opacity:.2; }
+
+    /* Fix sizing that hid cards on mobile */
+    .leader-card { width: 100% !important; max-width: 360px !important; }
+    .leader-photo { width: 100% !important; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+
+    /* Grid spacing and columns for mobile */
+    .leadership-grid { column-gap: 32px; row-gap: 32px; justify-items: center; }
+    @media (max-width: 768px) {
+      .leadership-grid { grid-template-columns: repeat(2, minmax(0,1fr)) !important; }
+    }
+    @media (max-width: 520px) {
+      .leadership-grid { grid-template-columns: 1fr !important; }
+    }
+
+    /* Make sure section text isn’t black on dark bg */
+    #leadership .section-title { color: var(--text) !important; }
   </style>
 </head>
 
@@ -625,8 +561,7 @@
     /* Cursor spotlight */
     const root = document.documentElement;
     const spotlight = document.querySelector('.spotlight');
-    let rafId = null;
-    let mx = innerWidth/2, my = innerHeight/2;
+    let rafId = null; let mx = innerWidth/2, my = innerHeight/2;
     const updateMouseVars = () => {
       root.style.setProperty('--mx', mx + 'px');
       root.style.setProperty('--my', my + 'px');
@@ -656,7 +591,7 @@
       });
     }, {passive:true});
 
-    /* 3D tilt */
+    /* 3D tilt — DISABLED for leader cards to keep professional look */
     function makeTilt(el){
       const damp = 12;
       el.addEventListener('pointermove', (e)=>{
@@ -667,6 +602,8 @@
       });
       el.addEventListener('pointerleave', ()=>{ el.style.transform = '' });
     }
+    /* Remove tilt behavior for leader cards */
+    document.querySelectorAll('.leader-card').forEach(el => el.classList.remove('tilt'));
     document.querySelectorAll('.tilt').forEach(makeTilt);
 
     /* Parallax stars */
@@ -678,6 +615,17 @@
       if(stars2) stars2.style.transform = `translateY(${y * 0.14}px)`;
     };
     onScrollParallax(); addEventListener('scroll', onScrollParallax, {passive:true});
+
+    /* Safety: reveal anything already in view (some mobiles) */
+    function revealInView() {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < innerHeight && r.bottom > 0) el.classList.add('revealed');
+      });
+    }
+    revealInView();
+    addEventListener('load', revealInView, { once: true });
+    addEventListener('resize', revealInView);
   </script>
 </body>
 </html>
