@@ -3,171 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Hedge Fund | New Wave Capital</title>
-  <link rel="icon" href="NWC.png" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-  <style>
-    /* ====== Original styles (kept exactly as-is) ====== */
-    body {
-      margin: 0;
-      font-family: 'Inter', sans-serif;
-      background-color: #0a0a0a;
-      color: #f2f2f2;
-    }
+  <title>New Wave Capital | University of Michigan</title>
+  <link rel="icon" href="NWC.png" /> 
+  <link rel="stylesheet" href="styles.css" />
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 60px 20px;
-    }
+  <!-- Open Graph Meta Tags for Link Sharing -->
+  <meta property="og:title" content="New Wave Capital | University of Michigan" />
+  <meta property="og:description" content="A student-run hedge fund launching Fall 2025 at Michigan Ross." />
+  <meta property="og:image" content="https://newwavecapitalumich.org/ross-building1.jpg" />
+  <meta property="og:image:secure_url" content="https://newwavecapitalumich.org/ross-building1.jpg" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:url" content="https://newwavecapitalumich.org/index.html" />
+  <meta property="og:type" content="website" />
 
-    .header {
-      background-color: #0a0a0a;
-      padding: 20px 0;
-      border-bottom: 1px solid #1f1f1f;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-    }
+  <!-- Twitter Card Meta Tags -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="New Wave Capital | University of Michigan" />
+  <meta name="twitter:description" content="A student-run hedge fund launching Fall 2025 at Michigan Ross." />
+  <meta name="twitter:image" content="https://newwavecapitalumich.org/ross-building1.jpg" />
 
-    .header-container {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    .logo {
-      width: 60px;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 30px;
-      list-style: none;
-    }
-
-    .nav-links a {
-      color: #f2f2f2;
-      text-decoration: none;
-      font-weight: 600;
-    }
-
-    .nav-links a:hover,
-    .nav-links .active {
-      color: #3ca6ff;
-    }
-
-    h2.section-title {
-      font-size: 2.4rem;
-      text-align: center;
-      color: #ffffff;
-    }
-
-    p.section-description {
-      text-align: center;
-      color: #cccccc;
-      font-size: 1.1rem;
-      margin-bottom: 50px;
-    }
-
-    .strategy-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 40px;
-    }
-
-    .strategy-card {
-      background-color: #1c1c1c;
-      padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-
-    .strategy-card:hover {
-      transform: translateY(-6px);
-    }
-
-    .strategy-img {
-      width: 100%;
-      height: 180px;
-      object-fit: cover;
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
-
-    .strategy-card h3 {
-      color: #3ca6ff;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
-    .strategy-card p {
-      color: #ccc;
-      font-size: 0.95rem;
-    }
-
-    .competition-info {
-      background: url('competition-bg.jpg') center center/cover no-repeat;
-      padding: 60px 30px;
-      margin-top: 80px;
-      border-radius: 12px;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .competition-info::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background-color: rgba(0, 0, 0, 0.65);
-      z-index: 0;
-    }
-
-    .competition-info .content {
-      position: relative;
-      z-index: 1;
-      text-align: center;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-
-    .competition-info h3 {
-      font-size: 1.9rem;
-      color: #3ca6ff;
-      margin-bottom: 20px;
-    }
-
-    .competition-info p {
-      font-size: 1.05rem;
-      color: #f2f2f2;
-      line-height: 1.7;
-      margin-bottom: 20px;
-    }
-
-    footer {
-      background-color: #0a0a0a;
-      color: #888;
-      text-align: center;
-      padding: 30px 20px;
-      font-size: 0.9rem;
-      border-top: 1px solid #1f1f1f;
-    }
-
-    @media (max-width: 768px) {
-      .nav-links {
-        flex-direction: column;
-        gap: 10px;
-        text-align: right;
-      }
-    }
-  </style>
-
-  <!-- ====== Added: Same styling system used on index.html (non-breaking, overrides only) ====== -->
+  <!-- In-Page Styles (upgraded animations, lighting & effects) -->
   <style>
     :root{
       --bg:#080c12;
@@ -182,14 +39,18 @@
       --blur:12px;
     }
 
+    *{box-sizing:border-box}
+    html,body{margin:0;padding:0}
     html{scroll-behavior:smooth}
     body{
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+      color:var(--text);
       background: var(--bg);
-      color: var(--text);
+      line-height:1.6;
       overflow-x:hidden;
     }
 
-    /* Ambient gradient fields + animated caustics */
+    /* Ambient gradient fields + animated caustics + film grain */
     body::before, body::after{
       content:"";
       position:fixed; inset:-10vmax; pointer-events:none; z-index:-3;
@@ -203,6 +64,7 @@
       filter: saturate(110%);
     }
     body::after{
+      /* subtle animated caustics mask */
       background:
         conic-gradient(from 0deg at 50% 50%, rgba(255,255,255,.12), rgba(255,255,255,0) 30%, rgba(255,255,255,.12) 60%, rgba(255,255,255,0) 100%),
         radial-gradient(1200px 900px at 50% 50%, rgba(255,255,255,.04), transparent 60%);
@@ -212,7 +74,7 @@
     }
     @keyframes swirl{ to{ transform: rotate(360deg)} }
 
-    /* Cursor spotlight + star layers (decorative) */
+    /* Cursor spotlight (dynamic) */
     .spotlight{
       position:fixed; inset:0; pointer-events:none; z-index:-1;
       background:
@@ -220,6 +82,8 @@
         radial-gradient(600px 400px at calc(var(--mx,50%)*.9) calc(var(--my,50%)*1.1), rgba(91,255,222,.12), transparent 60%);
       transition: background-position .1s;
     }
+
+    /* Subtle star parallax layers */
     .stars,.stars2{
       position:fixed; inset:0; pointer-events:none; z-index:-2;
       background-repeat:no-repeat; background-size:cover;
@@ -239,28 +103,41 @@
         radial-gradient(1px 1px at 40% 85%, rgba(255,255,255,.14) 50%, transparent 51%);
     }
 
-    /* Header glass & active styles */
-    .header{
-      background: rgba(12,18,27, .45) !important;
-      backdrop-filter: saturate(160%) blur(var(--blur));
-      border-bottom: 1px solid rgba(255,255,255,.08) !important;
-      transition: background .4s ease, border-color .3s ease;
+    /* Containers */
+    .container{max-width:1120px;margin:0 auto;padding:0 24px}
+    .two-col{
+      display:grid; gap:36px; align-items:center;
+      grid-template-columns: repeat(2, minmax(0,1fr));
     }
-    .header.scrolled{ background: rgba(10,14,20,.78) !important; border-color: rgba(255,255,255,.12) !important }
+    @media (max-width: 900px){ .two-col{grid-template-columns:1fr} }
+
+    /* Header with glass + scroll progress bar */
+    .header{
+      position: sticky; top:0; z-index:1000;
+      background: rgba(12,18,27, .45);
+      backdrop-filter: saturate(160%) blur(var(--blur));
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      transition: background .4s ease, transform .4s ease, border-color .3s ease;
+    }
+    .header.scrolled{ background: rgba(10,14,20,.78); border-color: rgba(255,255,255,.12) }
+    .header-container{
+      display:flex; align-items:center; justify-content:space-between;
+      gap:20px; padding:14px 24px;
+    }
+    .logo{width:44px; height:44px; border-radius:10px; box-shadow: var(--shadow)}
+    .nav-links{list-style:none; display:flex; gap:18px; padding:0; margin:0}
     .nav-links a{
-      position:relative;
-      border-radius:10px;
-      transition: color .25s ease, transform .25s ease;
+      color:var(--text); text-decoration:none; padding:10px 12px; border-radius:10px;
+      position:relative; transition: color .25s ease, transform .25s ease;
     }
     .nav-links a::after{
-      content:""; position:absolute; left:0; right:0; bottom:-6px; height:2px;
+      content:""; position:absolute; left:12px; right:12px; bottom:6px; height:2px;
       background: linear-gradient(90deg, var(--accent), var(--accent-2));
       transform:scaleX(0); transform-origin:right; transition: transform .25s ease;
       border-radius:2px;
     }
-    .nav-links a:hover{ transform:translateY(-1px) }
-    .nav-links a:hover::after,
-    .nav-links a.active::after{ transform:scaleX(1); transform-origin:left }
+    .nav-links a:hover{color:#fff; transform:translateY(-1px)}
+    .nav-links a:hover::after,.nav-links a.active::after{ transform:scaleX(1); transform-origin:left }
 
     /* Scroll progress bar */
     .progress{
@@ -271,10 +148,128 @@
       transition: width .1s linear;
     }
 
-    /* Section helpers from index */
+    /* Hero */
+    .hero-background{ position:relative; height:100vh; overflow:hidden; }
+    .hero-background video{
+      will-change: transform, filter;
+      filter: saturate(115%) contrast(102%) brightness(78%);
+      transition: transform .6s ease;
+    }
+    .hero-background .overlay{
+      position:absolute; inset:0;
+      background:
+        radial-gradient(60% 60% at 50% 40%, rgba(0,0,0,.15), rgba(0,0,0,.66) 70%),
+        conic-gradient(from 180deg at 50% 40%, rgba(60,166,255,.12), rgba(91,255,222,.06), rgba(255,138,60,.06), transparent 65%);
+      mix-blend-mode: normal;
+      display:flex; align-items:center; justify-content:center; text-align:center; color:white;
+      animation: overlayGlow 9s ease-in-out infinite alternate;
+    }
+    @keyframes overlayGlow{
+      from { filter: hue-rotate(0deg) brightness(1) }
+      to { filter: hue-rotate(12deg) brightness(1.08) }
+    }
+    .hero-content{
+      transform: translateY(10px) scale(.98);
+      opacity:0; animation: heroIn .9s ease .15s forwards;
+      padding: 0 24px;
+    }
+    .main-logo{ width:100px; height:100px; border-radius:24px; box-shadow: 0 18px 60px rgba(0,0,0,.45), 0 0 0 1px rgba(255,255,255,.2); animation: floaty 6s ease-in-out infinite }
+    .hero-content h1{ font-size: clamp(38px, 6.2vw, 72px); margin: 18px 0 8px; letter-spacing:.3px; line-height:1.1 }
+    .hero-content p{ color: var(--muted); font-size: clamp(16px, 2.2vw, 20px); margin: 0 0 22px }
+
+    /* Split text reveal (applied via JS) */
+    .reveal-chars .char{
+      display:inline-block; opacity:0; transform: translateY(16px) scale(.98);
+      filter: blur(4px);
+      animation: charIn .65s cubic-bezier(.2,.65,.2,1) forwards;
+    }
+    @keyframes charIn{
+      to{ opacity:1; transform: none; filter: blur(0) }
+    }
+
+    /* Buttons (magnetic + shine) */
+    .btn-primary, .btn-secondary{
+      display:inline-block; text-decoration:none; font-weight:700; letter-spacing:.2px;
+      padding:13px 20px; border-radius:12px; transition: transform .2s ease, box-shadow .2s ease, background .25s ease;
+      position:relative; overflow:hidden; isolation:isolate; will-change: transform;
+    }
+    .btn-primary{
+      color:#00111f; background: linear-gradient(135deg, var(--accent), #6ecbff);
+      box-shadow: 0 12px 28px rgba(60,166,255,.35), inset 0 0 0 1px rgba(255,255,255,.35);
+    }
+    .btn-secondary{
+      color:#031018; background: linear-gradient(135deg, var(--accent-2), #7affee);
+      box-shadow: 0 12px 28px rgba(91,255,222,.25), inset 0 0 0 1px rgba(255,255,255,.3);
+    }
+    .btn-primary::after, .btn-secondary::after{
+      content:""; position:absolute; inset:-30%;
+      background: radial-gradient(200px 200px at var(--x,50%) var(--y,50%), rgba(255,255,255,.45), transparent 40%);
+      opacity:0; transition: opacity .25s ease;
+    }
+    .btn-primary:hover, .btn-secondary:hover{ transform: translateY(-2px); }
+    .btn-primary:hover::after, .btn-secondary:hover::after{ opacity:1 }
+    /* Shine sweep */
+    .btn-primary::before, .btn-secondary::before{
+      content:""; position:absolute; top:-100%; left:-30%; width:60%; height:300%;
+      background: linear-gradient(115deg, transparent 0%, rgba(255,255,255,.45) 50%, transparent 100%);
+      transform: translateX(-120%) rotate(12deg);
+      transition: transform .7s ease;
+      mix-blend-mode: screen;
+    }
+    .btn-primary:hover::before, .btn-secondary:hover::before{ transform: translateX(200%) rotate(12deg) }
+
+    /* Sections */
+    .section{ padding:88px 0 }
     .section-alt{ padding:88px 0; background: linear-gradient(180deg, rgba(255,255,255,.02), transparent 60%) }
+    .section-title{ font-size: clamp(24px, 3.2vw, 38px); margin: 0 0 10px }
+    .section-description{ color:var(--muted); margin: 0 0 26px }
+
+    /* Grid / Cards with 3D tilt + glow + shine */
+    .grid-3{ display:grid; gap:22px; grid-template-columns: repeat(3, minmax(0,1fr)); perspective: 1200px }
+    @media (max-width: 900px){ .grid-3{ grid-template-columns:1fr } }
+    .card{
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border:1px solid rgba(255,255,255,.1);
+      border-radius: var(--radius);
+      padding:22px;
+      box-shadow: var(--shadow);
+      transform: translateY(0) scale(1) rotateX(0) rotateY(0);
+      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
+      position:relative; overflow:hidden; will-change: transform;
+    }
+    .card::before{
+      content:"";
+      position:absolute; inset:-1px;
+      background: radial-gradient(400px 260px at var(--x,50%) var(--y,50%), rgba(60,166,255,.15), transparent 40%);
+      opacity:.0; transition:opacity .25s ease;
+    }
+    .card::after{
+      /* sweeping shine */
+      content:""; position:absolute; top:-40%; left:-20%; width:40%; height:180%;
+      background: linear-gradient(120deg, transparent, rgba(255,255,255,.18), transparent);
+      transform: translateX(-120%) rotate(18deg); transition: transform .8s ease;
+      mix-blend-mode: screen; pointer-events:none;
+    }
+    .card:hover{ transform: translateY(-6px) scale(1.01); box-shadow: 0 18px 45px rgba(0,0,0,.38); border-color: rgba(60,166,255,.35) }
+    .card:hover::before{ opacity:.6 }
+    .card:hover::after{ transform: translateX(220%) rotate(18deg) }
+
+    /* Parallax image shadow */
+    #zan-carver img{ box-shadow: var(--shadow); transform: translateZ(0) }
+
+    /* Contact cards on dark image */
+    #contact .card{ background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.18) }
+    #contact a{ text-decoration:none }
+
+    /* Footer */
+    footer{ border-top:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02) }
+    .footer-container{ padding:24px 24px; text-align:center; color:var(--muted) }
+
+    /* Reveal Animations */
     .reveal{ opacity:0; transform: translateY(22px) scale(.98); }
     .reveal.revealed{ opacity:1; transform: none; transition: opacity .7s cubic-bezier(.2,.65,.2,1), transform .7s cubic-bezier(.2,.65,.2,1) }
+
+    /* stagger helpers */
     .stagger > *{ opacity:0; transform: translateY(16px); }
     .stagger.revealed > *{
       opacity:1; transform:none;
@@ -286,53 +281,15 @@
     .stagger.revealed > *:nth-child(4){ transition-delay:.26s }
     .stagger.revealed > *:nth-child(5){ transition-delay:.33s }
 
-    /* Make strategy cards adopt the same lighting/tilt/glow as index cards */
-    .strategy-grid{ perspective: 1200px }
-    .strategy-card{
-      position:relative;
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border:1px solid rgba(255,255,255,.1);
-      box-shadow: var(--shadow);
-      will-change: transform;
-      transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease, background .25s ease;
-      overflow:hidden;
+    /* Keyframes */
+    @keyframes heroIn{
+      from{ opacity:0; transform: translateY(14px) scale(.98) }
+      to{ opacity:1; transform: translateY(0) scale(1) }
     }
-    .strategy-card::before{
-      content:"";
-      position:absolute; inset:-1px;
-      background: radial-gradient(400px 260px at var(--x,50%) var(--y,50%), rgba(60,166,255,.18), transparent 40%);
-      opacity:0; transition:opacity .25s ease; pointer-events:none;
+    @keyframes floaty{
+      0%,100%{ transform: translateY(0) }
+      50%{ transform: translateY(-8px) }
     }
-    .strategy-card::after{
-      content:""; position:absolute; top:-40%; left:-20%; width:40%; height:180%;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,.18), transparent);
-      transform: translateX(-120%) rotate(18deg); transition: transform .8s ease;
-      mix-blend-mode: screen; pointer-events:none;
-    }
-    .strategy-card:hover{
-      transform: translateY(-6px) scale(1.01);
-      box-shadow: 0 18px 45px rgba(0,0,0,.38);
-      border-color: rgba(60,166,255,.35);
-    }
-    .strategy-card:hover::before{ opacity:.6 }
-    .strategy-card:hover::after{ transform: translateX(220%) rotate(18deg) }
-
-    /* Contact cards (match dark glass style) */
-    #contact .card{
-      background: rgba(255,255,255,.12) !important;
-      border: 1px solid rgba(255,255,255,.18) !important;
-      border-radius: var(--radius) !important;
-      box-shadow: var(--shadow);
-      position: relative;
-      overflow: hidden;
-    }
-    #contact .card::before{
-      content:""; position:absolute; inset:-1px;
-      background: radial-gradient(380px 240px at var(--x,50%) var(--y,50%), rgba(60,166,255,.15), transparent 45%);
-      opacity:0; transition: opacity .25s ease;
-    }
-    #contact .card:hover::before{ opacity:.6 }
 
     /* Focus styles */
     a:focus-visible, button:focus-visible{ outline: 3px solid var(--accent); outline-offset:2px; border-radius:10px }
@@ -346,8 +303,7 @@
 </head>
 
 <body>
-
-  <!-- ====== Added decorative/UX layers (do not affect original content) ====== -->
+  <!-- decorative layers -->
   <div class="progress" aria-hidden="true"></div>
   <div class="stars" aria-hidden="true"></div>
   <div class="stars2" aria-hidden="true"></div>
@@ -356,12 +312,12 @@
   <!-- Header -->
   <header class="header">
     <div class="header-container">
-      <img src="NWC.png" alt="Logo" class="logo" />
+      <img src="NWC.png" alt="New Wave Capital Logo" class="logo" /> 
       <nav>
         <ul class="nav-links">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html" class="active">Home</a></li>
           <li><a href="about.html">Who We Are</a></li>
-          <li><a href="hedgefund.html" class="active">Hedge Fund</a></li>
+          <li><a href="hedgefund.html">Hedge Fund</a></li>
           <li><a href="leadership.html">Leadership</a></li>
           <li><a href="apply.html">Apply</a></li>
         </ul>
@@ -369,125 +325,147 @@
     </div>
   </header>
 
-  <!-- Hedge Fund Section -->
-  <section class="container reveal">
-    <h2 class="section-title">Hedge Fund Strategy Desks</h2>
-    <p class="section-description">
-      New Wave Capital simulates the real-world structure of an elite hedge fund. Members are placed into desks and compete for a $500 top pitch prize.
-    </p>
+  <!-- Hero Section with Video Background -->
+  <section class="hero-background reveal" style="position: relative; height: 100vh; overflow: hidden;">
+    <video autoplay muted loop playsinline 
+      style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: -1;">
+      <source src="wavevideo.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
 
-    <div class="strategy-grid stagger">
-      <div class="strategy-card tilt">
-        <img src="quant.jpg" alt="Quantitative" class="strategy-img">
-        <h3>Quant/Derivatives</h3>
-        <p>Statistical modeling, backtesting, and signal-based trading using data and code.</p>
-      </div>
-
-      <div class="strategy-card tilt">
-        <img src="macro.jpg" alt="Macro" class="strategy-img">
-        <h3>Credit</h3>
-        <p>Analyzing debt instruments, assessing risk and return, and formulating investment strategies to optimize the fund's credit portfolio.
-</p>
-      </div>
-
-      <div class="strategy-card tilt">
-        <img src="longshort.jpg" alt="Long/Short" class="strategy-img">
-        <h3>Value Investing (Long/Short)</h3>
-        <p>identifying undervalued stocks to go long on and overvalued stocks to short, using fundamental analysis to capitalize on price discrepancies and generate alpha.</p>
-      </div>
-
-      <div class="strategy-card tilt">
-        <img src="pe.jpg" alt="Private Equity" class="strategy-img">
-        <h3>Private Markets</h3>
-        <p>Sourcing, evaluating, and managing investments in private equity, venture capital, and private debt, with a focus on long-term value creation and illiquid asset strategies.</p>
-      </div>
-
-      <div class="strategy-card tilt">
-        <img src="derivatives.jpg" alt="Derivatives" class="strategy-img">
-        <h3>Commodities</h3>
-        <p>analyzing supply and demand dynamics to invest in physical assets like oil, gold, and agricultural products, using strategies to profit from price fluctuations in global markets.
-</p>
-      </div>
-
-      <div class="strategy-card tilt">
-        <img src="wildcard.jpg" alt="Wildcard" class="strategy-img">
-        <h3>Wildcard</h3>
-        <p>Unconventional ideas, from crypto to sports analytics, that aim to deliver alpha.</p>
+    <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); display: flex; align-items: center; justify-content: center; text-align: center; color: white;">
+      <div class="hero-content" style="z-index: 1;">
+        <img src="NWC.png" alt="New Wave Capital Logo" class="main-logo" /> 
+        <h1>New Wave Capital</h1>
+        <p>A Student-run Hedge Fund Launching Fall 2025 at The University of Michigan Ross School of Business</p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSfTN0Z0DUjJYIYdo2poCZwHZxNNJ0vW31mdhk8CB3IAqBOfOg/viewform" 
+           class="btn-primary" target="_blank">Fall 2025 Interest Form</a>
       </div>
     </div>
   </section>
 
-  <!-- Pitch Competition Section -->
-  <section class="competition-info reveal">
-    <div class="content">
-      <h3>$500 Pitch Competition</h3>
-      <p>
-        Each desk competes to deliver the strongest investment thesis of the semester. Every pitch must include a clear return profile and a well-thought-out hedge strategy.
+  <!-- Competition Highlight -->
+  <section class="section-alt reveal" id="competition">
+    <div class="container">
+      <h2 class="section-title">$1,000 Pitch Competition</h2>
+      <p class="section-description">
+        Our club simulates a real hedge fund—where members work in strategy desks (Quant, Macro, Long/Short, etc.) and present high-stakes investment pitches each semester. The top pitch wins a $1,000 cash prize.
       </p>
-      <p>
-        A portfolio committee of experienced members ensures desk diversification and simulates capital allocation across sectors.
-      </p>
-      <p>
-        Any asset class, strategy, or creative pitch is welcome. We value innovation, bold ideas, and rigorous thinking.
-      </p>
-      <p>
-        The ultimate goal: beat the S&P 500. The best pitch wins $500 and earns semester-wide recognition.
-      </p>
+      <div class="grid-3 stagger">
+        <div class="card tilt">
+          <h3>Join a Strategy Desk</h3>
+          <p>Work with peers in specialized desks to develop unique theses across asset classes.</p>
+        </div>
+        <div class="card tilt">
+          <h3>Pitch Competitively</h3>
+          <p>Deliver investment ideas backed by data, modeling, and an actionable hedge strategy.</p>
+        </div>
+        <div class="card tilt">
+          <h3>Win Recognition</h3>
+          <p>The strongest team each semester wins $1,000 and semester-wide distinction.</p>
+        </div>
+      </div>
     </div>
   </section>
 
-  
- <!-- Contact Section with Ross Background -->
+  <!-- About Section -->
+  <section class="section reveal" id="about">
+    <div class="container two-col">
+      <div class="stagger tilt">
+        <h2>Who We Are</h2>
+        <p>
+          Founded by Michigan students with experience at firms like BlackRock and Morgan Stanley, we offer real-world exposure to hedge fund strategy through competitive collaboration and mentorship.
+        </p>
+      </div>
+      <div class="stagger tilt">
+        <h2>Our Philosophy</h2>
+        <p>
+          We believe that when stakes are high, people are intended to perform and learn better. We value freedom in investing, showing whatever it takes to surpass the S&P500.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Speaker Highlight Section -->
+  <section class="section reveal" id="zan-carver">
+    <div class="container two-col">
+      <div class="stagger tilt">
+        <img src="zan-carver.jpg" alt="Zan Carver" style="width:100%; max-width: 400px; border-radius: 8px;" />
+      </div>
+      <div class="stagger tilt">
+        <img src="ubs-logo.png" alt="UBS Logo" style="width: 120px; margin-bottom: 16px;" />
+        <h2>Networking Session with Zan Carver</h2>
+        <p>
+          In <strong>Fall 2025</strong>, New Wave Capital will host an exclusive info and networking session with 
+          <strong>Zan Carver</strong>, a Senior Wealth Strategy Associate at UBS and a Wall Street + fitness influencer. 
+          Learn directly from his experience in high-level wealth strategy, personal branding, and breaking into competitive financial roles.
+        </p>
+        <p>
+          This session offers students the opportunity to hear Zan's story, ask questions, and connect with a professional who bridges finance and lifestyle branding in a unique way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="section-alt text-center reveal" id="join">
+    <div class="container">
+      <h2 class="section-title">Ready to Compete?</h2>
+      <p class="section-description">We're looking for bold thinkers and sharp investors. Are you in?</p>
+      <a href="apply.html" class="btn-secondary">Apply for Fall 2025</a>
+    </div>
+  </section>
+
+  <!-- Contact Section with Ross Background -->
   <section class="section-alt reveal" id="contact" style="background: url('ross-building1.jpg') center center/cover no-repeat; color: white; position: relative;">
     <div class="overlay" style="background-color: rgba(0, 0, 0, 0.65); padding: 60px 0;">
       <div class="container">
         <h2 class="section-title" style="color: white;">Contact Us</h2>
         <p class="section-description" style="color: #d0d0d0;">We’d love to hear from you. Connect through any of the platforms below.</p>
         <div class="grid-3">
-          <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
+          <article class="card tilt" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
             <img src="linkedin-icon.png" alt="LinkedIn icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
             <h3 style="color: white;">LinkedIn</h3>
             <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" rel="noopener noreferrer" style="color: #3ca6ff;">linkedin.com/new-wave-capital-umich</a></p>
           </article>
-          <article class="card" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
+          <article class="card tilt" style="background: rgba(255, 255, 255, 0.1); border-radius: 12px; padding: 20px;">
             <img src="instagram-icon.png" alt="Instagram icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
             <h3 style="color: white;">Instagram</h3>
             <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" rel="noopener noreferrer" style="color: #3ca6ff;">@newwavecapital.umich</a></p>
           </article>
-         
         </div>
       </div>
     </div>
   </section>
 
-
   <!-- Footer -->
   <footer class="reveal">
-    <p>&copy; 2025 New Wave Capital – University of Michigan</p>
+    <div class="container footer-container">
+      <p>&copy; 2025 New Wave Capital – University of Michigan</p>
+    </div>
   </footer>
 
-  <!-- ====== Added: Same interactions/effects script from index (safe on any page) ====== -->
+  <!-- Upgraded Interactions & Effects (no external files) -->
   <script>
-    /* Scroll progress bar */
+    /* ===== Scroll progress bar ===== */
     const progress = document.querySelector('.progress');
     const setProgress = () => {
       const h = document.documentElement;
       const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-      if(progress) progress.style.width = scrolled + '%';
+      progress.style.width = scrolled + '%';
     };
     setProgress(); addEventListener('scroll', setProgress, {passive:true});
 
-    /* Header glass background on scroll */
+    /* ===== Header background on scroll ===== */
     const header = document.querySelector('.header');
     const onScrollHeader = () => {
-      if(!header) return;
       if(window.scrollY > 10) header.classList.add('scrolled');
       else header.classList.remove('scrolled');
     };
     onScrollHeader();
     window.addEventListener('scroll', onScrollHeader, {passive:true});
 
-    /* Intersection Observer for reveal/stagger */
+    /* ===== Intersection Observer for reveals ===== */
     const revealEls = [...document.querySelectorAll('.reveal, .stagger')];
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
@@ -499,14 +477,32 @@
     }, {threshold: .14, rootMargin: '0px 0px -10% 0px'});
     revealEls.forEach(el=>io.observe(el));
 
-    /* Cursor spotlight + root mouse vars */
+    /* ===== Split text reveal for hero heading & subhead ===== */
+    function splitText(el){
+      if(!el) return;
+      const text = el.textContent.trim();
+      el.textContent = '';
+      el.classList.add('reveal-chars');
+      [...text].forEach((ch, i)=>{
+        const span = document.createElement('span');
+        span.className = 'char';
+        span.style.animationDelay = (i * 0.025) + 's';
+        span.textContent = ch;
+        el.appendChild(span);
+      });
+    }
+    splitText(document.querySelector('.hero-content h1'));
+    splitText(document.querySelector('.hero-content p'));
+
+    /* ===== Cursor spotlight & interactive lighting ===== */
     const root = document.documentElement;
     const spotlight = document.querySelector('.spotlight');
     let rafId = null;
-    let mx = innerWidth/2, my = innerHeight/2;
+    let mx = window.innerWidth/2, my = window.innerHeight/2;
     const updateMouseVars = () => {
       root.style.setProperty('--mx', mx + 'px');
       root.style.setProperty('--my', my + 'px');
+      // also move background spotlight
       if(spotlight){
         spotlight.style.setProperty('--mx', mx + 'px');
         spotlight.style.setProperty('--my', my + 'px');
@@ -518,14 +514,14 @@
       if(!rafId) rafId = requestAnimationFrame(updateMouseVars);
     }, {passive:true});
 
-    /* Card/button hover light tracking */
+    /* ===== Card/button hover light tracking ===== */
     const trackXY = (e, el) => {
       const r = el.getBoundingClientRect();
       el.style.setProperty('--x', `${e.clientX - r.left}px`);
       el.style.setProperty('--y', `${e.clientY - r.top}px`);
     };
     document.addEventListener('pointermove', (e)=>{
-      document.querySelectorAll('.strategy-card, #contact .card').forEach(el=>{
+      document.querySelectorAll('.card, .btn-primary, .btn-secondary').forEach(el=>{
         const r = el.getBoundingClientRect();
         if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom){
           trackXY(e, el);
@@ -533,7 +529,22 @@
       });
     }, {passive:true});
 
-    /* 3D tilt for strategy cards */
+    /* ===== Magnetic buttons (gentle attraction) ===== */
+    function makeMagnetic(btn){
+      let hovering = false;
+      btn.addEventListener('pointerenter', ()=> hovering = true);
+      btn.addEventListener('pointerleave', ()=> { hovering = false; btn.style.transform = 'translateY(-2px)'; });
+      btn.addEventListener('pointermove', (e)=>{
+        if(!hovering) return;
+        const r = btn.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width/2)) / (r.width/2);
+        const dy = (e.clientY - (r.top + r.height/2)) / (r.height/2);
+        btn.style.transform = `translate(${dx*6}px, ${dy*4}px)`;
+      });
+    }
+    document.querySelectorAll('.btn-primary, .btn-secondary').forEach(makeMagnetic);
+
+    /* ===== 3D tilt cards ===== */
     function makeTilt(el){
       const damp = 12;
       el.addEventListener('pointermove', (e)=>{
@@ -548,16 +559,59 @@
     }
     document.querySelectorAll('.tilt').forEach(makeTilt);
 
-    /* Parallax on star layers (subtle) */
+    /* ===== Parallax on hero video & starfield ===== */
+    const hero = document.querySelector('.hero-background');
+    const video = hero ? hero.querySelector('video') : null;
     const stars = document.querySelector('.stars');
     const stars2 = document.querySelector('.stars2');
+
     const onScrollParallax = () => {
       const y = window.scrollY || 0;
+      if(video){
+        const heroHeight = hero.offsetHeight;
+        const progress = Math.min(1, Math.max(0, y / heroHeight));
+        const scale = 1 + progress * 0.08; // subtle zoom as you scroll
+        video.style.transform = `translateY(${progress * -30}px) scale(${scale})`;
+      }
       if(stars)  stars.style.transform  = `translateY(${y * 0.08}px)`;
       if(stars2) stars2.style.transform = `translateY(${y * 0.14}px)`;
     };
     onScrollParallax();
     addEventListener('scroll', onScrollParallax, {passive:true});
+
+    /* ===== Smooth scroll for same-page anchors ===== */
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
+      });
+    });
+
+    /* ===== Scroll-to-top button ===== */
+    const topBtn = document.createElement('button');
+    topBtn.setAttribute('aria-label','Scroll to top');
+    topBtn.textContent = '↑';
+    Object.assign(topBtn.style, {
+      position:'fixed', right:'18px', bottom:'18px', width:'44px', height:'44px',
+      borderRadius:'50%', border:'1px solid rgba(255,255,255,.25)', background:'linear-gradient(135deg, var(--accent), var(--accent-2))',
+      color:'#021725', fontWeight:'800', cursor:'pointer', boxShadow:'0 10px 24px rgba(60,166,255,.35)',
+      transform:'translateY(20px)', opacity:'0', transition:'opacity .25s ease, transform .25s ease, filter .2s ease',
+      zIndex:'1000', filter:'saturate(110%)'
+    });
+    topBtn.addEventListener('pointerenter', ()=> topBtn.style.filter='saturate(140%) brightness(1.05)');
+    topBtn.addEventListener('pointerleave', ()=> topBtn.style.filter='saturate(110%)');
+    topBtn.addEventListener('click', ()=> scrollTo({top:0, behavior:'smooth'}));
+    document.body.appendChild(topBtn);
+    const onScrollTopBtn = ()=>{
+      if(window.scrollY > 600){ topBtn.style.opacity='1'; topBtn.style.transform='translateY(0)'; }
+      else { topBtn.style.opacity='0'; topBtn.style.transform='translateY(20px)'; }
+    };
+    addEventListener('scroll', onScrollTopBtn, {passive:true});
+    onScrollTopBtn();
   </script>
 </body>
 </html>
