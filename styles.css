@@ -47,14 +47,20 @@ body {
   font-size: 1.1rem;
 }
 
-/* ========== Header ========== */
+/* ========== Header (Updated for hedgefund.html parity) ========== */
 .header {
-  background-color: #0a0a0a;
-  padding: 20px 0;
-  border-bottom: 1px solid #1f1f1f;
+  background: rgba(12, 18, 27, 0.45);
+  backdrop-filter: saturate(160%) blur(12px);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  transition: background 0.4s ease, border-color 0.3s ease;
+}
+
+.header.scrolled {
+  background: rgba(10, 14, 20, 0.78);
+  border-color: rgba(255, 255, 255, 0.12);
 }
 
 .header-container {
@@ -63,8 +69,9 @@ body {
   justify-content: space-between;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 14px 24px;
   flex-wrap: wrap;
+  gap: 16px;
 }
 
 .logo {
@@ -72,27 +79,61 @@ body {
   height: auto;
 }
 
+/* ========== Nav Links ========== */
 .nav-links {
+  list-style: none;
   display: flex;
   gap: 30px;
-  list-style: none;
+  padding: 0;
+  margin: 0;
   flex-wrap: wrap;
 }
 
 .nav-links a {
-  color: #f2f2f2;
+  position: relative;
   text-decoration: none;
   font-weight: 600;
-  transition: color 0.2s ease;
+  color: #f2f2f2;
+  transition: color 0.25s ease, transform 0.25s ease;
+  border-radius: 10px;
+  padding: 6px 4px;
 }
 
-.nav-links a:hover,
-.nav-links .active {
-  color: #3ca6ff;
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -6px;
+  height: 2px;
+  background: linear-gradient(90deg, #3ca6ff, #5bffde);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.25s ease;
+  border-radius: 2px;
 }
 
+.nav-links a:hover {
+  transform: translateY(-1px);
+}
 
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
 
+/* ========== Responsive Nav ========== */
+@media (max-width: 768px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    text-align: right;
+    width: 100%;
+  }
+}
+
+/* ========== Hero Section ========== */
 .overlay {
   background-color: rgba(0, 0, 0, 0.7);
   height: 100%;
