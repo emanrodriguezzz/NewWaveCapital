@@ -6,22 +6,14 @@
   <title>Placement | New Wave Capital</title>
   <link rel="icon" href="newwavemk2.png" />
   <link rel="stylesheet" href="styles.css" />
-  <style>
-    body::before {
-      background: 
-        linear-gradient(to bottom, rgba(0,0,0,0.75), rgba(0,0,0,0.75)),
-        url('placementcover.webp') center center / cover no-repeat fixed;
-      filter: brightness(1) saturate(110%);
-    }
-  </style>
 </head>
 
 <body>
-  <!-- Decorative Layers -->
-  <div class="progress" aria-hidden="true"></div>
-  <div class="stars" aria-hidden="true"></div>
-  <div class="stars2" aria-hidden="true"></div>
-  <div class="spotlight" aria-hidden="true"></div>
+  <!-- Decorative layers -->
+  <div class="progress"></div>
+  <div class="stars"></div>
+  <div class="stars2"></div>
+  <div class="spotlight"></div>
 
   <!-- Header -->
   <header class="header">
@@ -33,42 +25,41 @@
           <li><a href="hedgefund.html">Hedge Fund</a></li>
           <li><a href="leadership.html">Leadership</a></li>
           <li><a href="placement.html" class="active">Placement</a></li>
+          <li><a href="apply.html">Apply</a></li>
         </ul>
       </nav>
     </div>
   </header>
 
-  <!-- Placement Section -->
-  <section class="section reveal" id="placement">
+  <!-- Hero / Background -->
+  <section class="hero-background" style="height: 50vh; background: url('placementcover.webp') center center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center;">
+    <div class="hero-content reveal" style="z-index: 1;">
+      <h1 style="font-size: 3rem; color: white;">Where Our Members Go</h1>
+      <p style="font-size: 1.2rem; color: #ccc;">Firms our students have interned at, worked at, or received offers from.</p>
+    </div>
+  </section>
+
+  <!-- Placement Grid -->
+  <section class="section reveal">
     <div class="container">
-      <h2 class="section-title">Where Our Members Have Worked</h2>
-      <p class="section-description">
-        New Wave Capital students have earned offers and internships at the world’s top firms across finance, consulting, and beyond.
-      </p>
-
+      <h2 class="section-title">Notable Placements</h2>
+      <p class="section-description">Our alumni and members have landed roles at leading firms across finance and consulting.</p>
       <div class="grid-3 stagger">
-        <!-- BlackRock -->
-        <div class="card tilt" style="text-align:center;">
-          <img src="blackrock.png" alt="BlackRock" style="width: 160px; max-width: 100%; height: auto; margin: 0 auto;" />
-          <h3 style="margin-top: 18px;">BlackRock</h3>
+        <div class="card tilt" style="text-align: center;">
+          <img src="blackrock.png" alt="BlackRock" style="max-width: 100%; height: 80px; object-fit: contain;">
+          <h3 style="margin-top: 14px;">BlackRock</h3>
         </div>
-
-        <!-- McKinsey -->
-        <div class="card tilt" style="text-align:center;">
-          <img src="mckinsey.png" alt="McKinsey & Company" style="width: 160px; max-width: 100%; height: auto; margin: 0 auto;" />
-          <h3 style="margin-top: 18px;">McKinsey</h3>
+        <div class="card tilt" style="text-align: center;">
+          <img src="mckinsey.png" alt="McKinsey" style="max-width: 100%; height: 80px; object-fit: contain;">
+          <h3 style="margin-top: 14px;">McKinsey & Co.</h3>
         </div>
-
-        <!-- Morgan Stanley -->
-        <div class="card tilt" style="text-align:center;">
-          <img src="morganstanley.png" alt="Morgan Stanley" style="width: 160px; max-width: 100%; height: auto; margin: 0 auto;" />
-          <h3 style="margin-top: 18px;">Morgan Stanley</h3>
+        <div class="card tilt" style="text-align: center;">
+          <img src="morganstanley.png" alt="Morgan Stanley" style="max-width: 100%; height: 80px; object-fit: contain;">
+          <h3 style="margin-top: 14px;">Morgan Stanley</h3>
         </div>
-
-        <!-- KPMG -->
-        <div class="card tilt" style="text-align:center;">
-          <img src="kpmg.jpeg" alt="KPMG" style="width: 140px; max-width: 100%; height: auto; margin: 0 auto;" />
-          <h3 style="margin-top: 18px;">KPMG</h3>
+        <div class="card tilt" style="text-align: center;">
+          <img src="kpmg.jpeg" alt="KPMG" style="max-width: 100%; height: 80px; object-fit: contain;">
+          <h3 style="margin-top: 14px;">KPMG</h3>
         </div>
       </div>
     </div>
@@ -81,7 +72,7 @@
     </div>
   </footer>
 
-  <!-- Script (same as index) -->
+  <!-- Interactions -->
   <script>
     const progress = document.querySelector('.progress');
     const setProgress = () => {
@@ -96,7 +87,8 @@
       if(window.scrollY > 10) header.classList.add('scrolled');
       else header.classList.remove('scrolled');
     };
-    onScrollHeader(); window.addEventListener('scroll', onScrollHeader, {passive:true});
+    onScrollHeader();
+    window.addEventListener('scroll', onScrollHeader, {passive:true});
 
     const revealEls = [...document.querySelectorAll('.reveal, .stagger')];
     const io = new IntersectionObserver((entries)=>{
@@ -154,15 +146,6 @@
       });
     }
     document.querySelectorAll('.tilt').forEach(makeTilt);
-
-    const stars = document.querySelector('.stars');
-    const stars2 = document.querySelector('.stars2');
-    const onScrollParallax = () => {
-      const y = window.scrollY || 0;
-      if(stars)  stars.style.transform  = `translateY(${y * 0.08}px)`;
-      if(stars2) stars2.style.transform = `translateY(${y * 0.14}px)`;
-    };
-    onScrollParallax(); addEventListener('scroll', onScrollParallax, {passive:true});
   </script>
 </body>
 </html>
