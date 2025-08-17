@@ -33,12 +33,19 @@
     </div>
   </header>
 
-  <!-- Placement Section -->
+  <!-- Background Cover Image -->
+  <section class="section-alt reveal" style="background: url('placementcover.webp') center center/cover no-repeat; position: relative;">
+    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.65); padding: 80px 0;">
+      <div class="container text-center">
+        <h2 class="section-title" style="color: white;">Placement Outcomes</h2>
+        <p class="section-description" style="color: #d0d0d0;">Our members have placed into top-tier financial institutions and consulting firms.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Firms Grid -->
   <section class="section text-center reveal" data-aos="fade-up">
     <div class="container">
-      <h2>Placement Highlights</h2>
-      <p class="section-description">Our members have landed top roles at leading financial institutions.</p>
-
       <div class="grid-3">
         <article class="card">
           <img src="blackrock.png" alt="BlackRock Logo" style="height: 40px; margin-bottom: 16px;">
@@ -60,17 +67,6 @@
     </div>
   </section>
 
-  <!-- Background Section -->
-  <section class="section-alt reveal" style="background: url('placementcover.webp') center center/cover no-repeat; color: white; position: relative;">
-    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.65); padding: 60px 0;">
-      <div class="container text-center">
-        <h2 class="section-title" style="color: white;">Start Your Journey</h2>
-        <p class="section-description" style="color: #d0d0d0;">Join the ranks of students placed at the world’s top firms.</p>
-        <a href="apply.html" class="btn-primary">Apply Now</a>
-      </div>
-    </div>
-  </section>
-
   <!-- Footer -->
   <footer class="reveal">
     <div class="container footer-container" style="text-align:center; padding:24px 24px; color: var(--muted); border-top:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02)">
@@ -82,7 +78,7 @@
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init({ duration: 1000, once: true });</script>
 
-  <!-- Script (same as apply.html) -->
+  <!-- Interactions & Effects -->
   <script>
     const progress = document.querySelector('.progress');
     const setProgress = () => {
