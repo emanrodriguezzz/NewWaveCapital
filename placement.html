@@ -124,7 +124,6 @@
       background: rgba(12,18,27, .45);
       backdrop-filter: saturate(160%) blur(var(--blur));
       border-bottom: 1px solid rgba(255,255,255,.08);
-      transition: background .4s ease, border-color .3s ease;
     }
 
     .header.scrolled {
@@ -189,7 +188,6 @@
       transform-origin: left;
     }
 
-    /* Background Cover Section */
     .cover-section {
       background: url('placementcover.webp') center center/cover no-repeat;
       position: relative;
@@ -224,8 +222,10 @@
 
     .placement-marquee {
       display: flex;
-      gap: 60px;
-      animation: scroll-left 40s linear infinite;
+      gap: 100px;
+      animation: scroll-left 35s linear infinite;
+      align-items: center;
+      justify-content: flex-start;
     }
 
     @keyframes scroll-left {
@@ -237,41 +237,14 @@
       }
     }
 
-    .logo-card {
-      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
-      border: 1px solid rgba(255,255,255,.1);
-      border-radius: var(--radius);
-      padding: 20px;
-      box-shadow: var(--shadow);
-      position: relative;
-      transition: transform 0.3s ease, border-color 0.3s ease;
-      min-width: 180px;
+    .firm-logo {
+      max-height: 120px;
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
-    .logo-card img {
-      max-height: 50px;
-      max-width: 140px;
-      object-fit: contain;
-      display: block;
-      margin: 0 auto;
-    }
-
-    .logo-card:hover {
-      transform: translateY(-5px);
-      border-color: rgba(60,166,255,.35);
-    }
-
-    .logo-card::before {
-      content: "";
-      position: absolute;
-      inset: -1px;
-      background: radial-gradient(400px 260px at var(--x,50%) var(--y,50%), rgba(60,166,255,.15), transparent 40%);
-      opacity: 0;
-      transition: opacity 0.25s ease;
-    }
-
-    .logo-card:hover::before {
-      opacity: 0.6;
+    .firm-logo:hover {
+      transform: scale(1.08);
+      filter: drop-shadow(0 0 8px var(--accent));
     }
 
     footer {
@@ -285,7 +258,6 @@
 </head>
 
 <body>
-  <!-- Decorative Layers -->
   <div class="progress" aria-hidden="true"></div>
   <div class="stars" aria-hidden="true"></div>
   <div class="stars2" aria-hidden="true"></div>
@@ -307,7 +279,7 @@
     </div>
   </header>
 
-  <!-- Cover Section -->
+  <!-- Cover -->
   <section class="cover-section">
     <div class="cover-content container">
       <h2>Placement Outcomes</h2>
@@ -315,57 +287,29 @@
     </div>
   </section>
 
-  <!-- Logo Animation Section -->
+  <!-- Logos -->
   <section class="placement-track">
     <div class="placement-marquee">
-      <div class="logo-card"><img src="blackrock.png" alt="BlackRock" /></div>
-      <div class="logo-card"><img src="mckinsey.png" alt="McKinsey" /></div>
-      <div class="logo-card"><img src="morganstanley.png" alt="Morgan Stanley" /></div>
-      <div class="logo-card"><img src="kpmg.jpeg" alt="KPMG" /></div>
-
-      <!-- Repeat for looping scroll -->
-      <div class="logo-card"><img src="blackrock.png" alt="BlackRock" /></div>
-      <div class="logo-card"><img src="mckinsey.png" alt="McKinsey" /></div>
-      <div class="logo-card"><img src="morganstanley.png" alt="Morgan Stanley" /></div>
-      <div class="logo-card"><img src="kpmg.jpeg" alt="KPMG" /></div>
-    </div>
-  </section>
-
-  <!-- Contact Section with Ross Background -->
-  <section class="section-alt reveal" id="contact" style="background: url('ross-building1.jpg') center center/cover no-repeat; color: white; position: relative;">
-    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.65); padding: 60px 0;">
-      <div class="container">
-        <h2 class="section-title" style="color: white;">Contact Us</h2>
-        <p class="section-description" style="color: #d0d0d0;">We’d love to hear from you. Connect through any of the platforms below.</p>
-        <div class="grid-3">
-          <article class="card" style="border-radius: 12px; padding: 20px;">
-            <img src="linkedin-icon.png" alt="LinkedIn icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
-            <h3 style="color: white;">LinkedIn</h3>
-            <p><a href="https://www.linkedin.com/company/new-wave-capital-umich" target="_blank" rel="noopener noreferrer">linkedin.com/new-wave-capital-umich</a></p>
-          </article>
-          <article class="card" style="border-radius: 12px; padding: 20px;">
-            <img src="instagram-icon.png" alt="Instagram icon" style="width: 40px; height: 40px; margin-bottom: 12px;">
-            <h3 style="color: white;">Instagram</h3>
-            <p><a href="https://www.instagram.com/new_wave_capital.umich/?hl=en" target="_blank" rel="noopener noreferrer">@newwavecapital.umich</a></p>
-          </article>
-        </div>
-      </div>
+      <img src="blackrock.png" alt="BlackRock" class="firm-logo" />
+      <img src="mckinsey.png" alt="McKinsey" class="firm-logo" />
+      <img src="morganstanley.png" alt="Morgan Stanley" class="firm-logo" />
+      <img src="kpmg.jpeg" alt="KPMG" class="firm-logo" />
+      <!-- Repeated for scroll loop -->
+      <img src="blackrock.png" alt="BlackRock" class="firm-logo" />
+      <img src="mckinsey.png" alt="McKinsey" class="firm-logo" />
+      <img src="morganstanley.png" alt="Morgan Stanley" class="firm-logo" />
+      <img src="kpmg.jpeg" alt="KPMG" class="firm-logo" />
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="reveal">
-    <div class="container footer-container" style="text-align:center; padding:24px 24px; color: var(--muted); border-top:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02)">
-      <p>&copy; 2025 New Wave Capital – University of Michigan</p>
-    </div>
+  <footer>
+    <p>&copy; 2025 New Wave Capital – University of Michigan</p>
   </footer>
 
-  
-  <!-- AOS -->
+  <!-- Scripts -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init({ duration: 1000, once: true });</script>
-
-  <!-- JS Effects -->
   <script>
     const root = document.documentElement;
     const spotlight = document.querySelector('.spotlight');
@@ -398,16 +342,6 @@
     window.addEventListener('scroll', () => {
       if (window.scrollY > 10) header.classList.add('scrolled');
       else header.classList.remove('scrolled');
-    });
-
-    document.addEventListener('pointermove', (e) => {
-      document.querySelectorAll('.logo-card').forEach(el => {
-        const r = el.getBoundingClientRect();
-        if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom) {
-          el.style.setProperty('--x', `${e.clientX - r.left}px`);
-          el.style.setProperty('--y', `${e.clientY - r.top}px`);
-        }
-      });
     });
   </script>
 </body>
