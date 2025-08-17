@@ -8,6 +8,91 @@
   <link href="styles.css" rel="stylesheet" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+  <style>
+    .placement-marquee {
+      display: flex;
+      gap: 40px;
+      animation: scroll-left 40s linear infinite;
+    }
+
+    @keyframes scroll-left {
+      0% {
+        transform: translateX(0%);
+      }
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    .logo-card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid rgba(255,255,255,.1);
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.35);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      position: relative;
+      min-width: 220px;
+    }
+
+    .logo-card img {
+      height: 40px;
+      margin-bottom: 12px;
+    }
+
+    .logo-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(60,166,255,.35);
+    }
+
+    .logo-card::before {
+      content: "";
+      position: absolute;
+      inset: -1px;
+      background: radial-gradient(400px 260px at var(--x,50%) var(--y,50%), rgba(60,166,255,.15), transparent 40%);
+      opacity: 0;
+      transition: opacity 0.25s ease;
+    }
+
+    .logo-card:hover::before {
+      opacity: 0.6;
+    }
+
+    .placement-track {
+      overflow: hidden;
+      width: 100%;
+      padding: 40px 0;
+      position: relative;
+    }
+
+    .placement-track::before,
+    .placement-track::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 60px;
+      z-index: 1;
+    }
+
+    .placement-track::before {
+      left: 0;
+      background: linear-gradient(to right, #080c12, transparent);
+    }
+
+    .placement-track::after {
+      right: 0;
+      background: linear-gradient(to left, #080c12, transparent);
+    }
+
+    @media (max-width: 768px) {
+      .placement-marquee {
+        flex-direction: column;
+        animation: none;
+        gap: 20px;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -38,31 +123,26 @@
     <div class="overlay" style="background-color: rgba(0, 0, 0, 0.65); padding: 80px 0;">
       <div class="container text-center">
         <h2 class="section-title" style="color: white;">Placement Outcomes</h2>
-        <p class="section-description" style="color: #d0d0d0;">Our members have placed into top-tier financial institutions and consulting firms.</p>
+        <p class="section-description" style="color: #d0d0d0;">Our members have placed into top-tier firms across finance and consulting.</p>
       </div>
     </div>
   </section>
 
-  <!-- Firms Grid -->
-  <section class="section text-center reveal" data-aos="fade-up">
+  <!-- Moving Logos Section -->
+  <section class="section reveal text-center" data-aos="fade-up">
     <div class="container">
-      <div class="grid-3">
-        <article class="card">
-          <img src="blackrock.png" alt="BlackRock Logo" style="height: 40px; margin-bottom: 16px;">
-          <h3>BlackRock</h3>
-        </article>
-        <article class="card">
-          <img src="mckinsey.png" alt="McKinsey Logo" style="height: 40px; margin-bottom: 16px;">
-          <h3>McKinsey & Company</h3>
-        </article>
-        <article class="card">
-          <img src="morganstanley.png" alt="Morgan Stanley Logo" style="height: 40px; margin-bottom: 16px;">
-          <h3>Morgan Stanley</h3>
-        </article>
-        <article class="card">
-          <img src="kpmg.jpeg" alt="KPMG Logo" style="height: 40px; margin-bottom: 16px;">
-          <h3>KPMG</h3>
-        </article>
+      <div class="placement-track">
+        <div class="placement-marquee">
+          <div class="logo-card"><img src="blackrock.png" alt="BlackRock"><h3>BlackRock</h3></div>
+          <div class="logo-card"><img src="mckinsey.png" alt="McKinsey"><h3>McKinsey & Co</h3></div>
+          <div class="logo-card"><img src="morganstanley.png" alt="Morgan Stanley"><h3>Morgan Stanley</h3></div>
+          <div class="logo-card"><img src="kpmg.jpeg" alt="KPMG"><h3>KPMG</h3></div>
+          <!-- Duplicate logos for infinite scroll effect -->
+          <div class="logo-card"><img src="blackrock.png" alt="BlackRock"><h3>BlackRock</h3></div>
+          <div class="logo-card"><img src="mckinsey.png" alt="McKinsey"><h3>McKinsey & Co</h3></div>
+          <div class="logo-card"><img src="morganstanley.png" alt="Morgan Stanley"><h3>Morgan Stanley</h3></div>
+          <div class="logo-card"><img src="kpmg.jpeg" alt="KPMG"><h3>KPMG</h3></div>
+        </div>
       </div>
     </div>
   </section>
@@ -74,11 +154,11 @@
     </div>
   </footer>
 
-  <!-- AOS Library -->
+  <!-- AOS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>AOS.init({ duration: 1000, once: true });</script>
 
-  <!-- Interactions & Effects -->
+  <!-- Effects (same as apply.html) -->
   <script>
     const progress = document.querySelector('.progress');
     const setProgress = () => {
@@ -132,7 +212,7 @@
       el.style.setProperty('--y', `${e.clientY - r.top}px`);
     };
     document.addEventListener('pointermove', (e)=>{
-      document.querySelectorAll('.card, .btn-primary, .btn-secondary').forEach(el=>{
+      document.querySelectorAll('.logo-card, .btn-primary, .btn-secondary').forEach(el=>{
         const r = el.getBoundingClientRect();
         if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom){
           trackXY(e, el);
