@@ -5,20 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Placement | New Wave Capital</title>
   <link rel="icon" href="newwavemk2.png" />
-  <link rel="stylesheet" href="styles.css" />
+  <link href="styles.css" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
 </head>
 
 <body>
-  <!-- Decorative layers -->
-  <div class="progress"></div>
-  <div class="stars"></div>
-  <div class="stars2"></div>
-  <div class="spotlight"></div>
+  <!-- Decorative Layers -->
+  <div class="progress" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="stars2" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
 
   <!-- Header -->
   <header class="header">
-    <div class="header-container">
-      <img src="newwavemk2.png" alt="Logo" class="logo" />
+    <div class="container header-container">
+      <img src="newwavemk2.png" alt="New Wave Capital Logo" class="logo" />
       <nav>
         <ul class="nav-links">
           <li><a href="index.html">Home</a></li>
@@ -31,66 +33,75 @@
     </div>
   </header>
 
-  <!-- Hero / Background -->
-  <section class="hero-background" style="height: 50vh; background: url('placementcover.webp') center center/cover no-repeat; display: flex; align-items: center; justify-content: center; text-align: center;">
-    <div class="hero-content reveal" style="z-index: 1;">
-      <h1 style="font-size: 3rem; color: white;">Where Our Members Go</h1>
-      <p style="font-size: 1.2rem; color: #ccc;">Firms our students have interned at, worked at, or received offers from.</p>
+  <!-- Placement Section -->
+  <section class="section text-center reveal" data-aos="fade-up">
+    <div class="container">
+      <h2>Placement Highlights</h2>
+      <p class="section-description">Our members have landed top roles at leading financial institutions.</p>
+
+      <div class="grid-3">
+        <article class="card">
+          <img src="blackrock.png" alt="BlackRock Logo" style="height: 40px; margin-bottom: 16px;">
+          <h3>BlackRock</h3>
+        </article>
+        <article class="card">
+          <img src="mckinsey.png" alt="McKinsey Logo" style="height: 40px; margin-bottom: 16px;">
+          <h3>McKinsey & Company</h3>
+        </article>
+        <article class="card">
+          <img src="morganstanley.png" alt="Morgan Stanley Logo" style="height: 40px; margin-bottom: 16px;">
+          <h3>Morgan Stanley</h3>
+        </article>
+        <article class="card">
+          <img src="kpmg.jpeg" alt="KPMG Logo" style="height: 40px; margin-bottom: 16px;">
+          <h3>KPMG</h3>
+        </article>
+      </div>
     </div>
   </section>
 
-  <!-- Placement Grid -->
-  <section class="section reveal">
-    <div class="container">
-      <h2 class="section-title">Notable Placements</h2>
-      <p class="section-description">Our members have landed roles at leading firms across finance and consulting.</p>
-      <div class="grid-3 stagger">
-        <div class="card tilt" style="text-align: center;">
-          <img src="blackrock.png" alt="BlackRock" style="max-width: 100%; height: 80px; object-fit: contain;">
-          <h3 style="margin-top: 14px;">BlackRock</h3>
-        </div>
-        <div class="card tilt" style="text-align: center;">
-          <img src="mckinsey.png" alt="McKinsey" style="max-width: 100%; height: 80px; object-fit: contain;">
-          <h3 style="margin-top: 14px;">McKinsey & Co.</h3>
-        </div>
-        <div class="card tilt" style="text-align: center;">
-          <img src="morganstanley.png" alt="Morgan Stanley" style="max-width: 100%; height: 80px; object-fit: contain;">
-          <h3 style="margin-top: 14px;">Morgan Stanley</h3>
-        </div>
-        <div class="card tilt" style="text-align: center;">
-          <img src="kpmg.jpeg" alt="KPMG" style="max-width: 100%; height: 80px; object-fit: contain;">
-          <h3 style="margin-top: 14px;">KPMG</h3>
-        </div>
+  <!-- Background Section -->
+  <section class="section-alt reveal" style="background: url('placementcover.webp') center center/cover no-repeat; color: white; position: relative;">
+    <div class="overlay" style="background-color: rgba(0, 0, 0, 0.65); padding: 60px 0;">
+      <div class="container text-center">
+        <h2 class="section-title" style="color: white;">Start Your Journey</h2>
+        <p class="section-description" style="color: #d0d0d0;">Join the ranks of students placed at the world’s top firms.</p>
+        <a href="apply.html" class="btn-primary">Apply Now</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer class="reveal">
-    <div class="container footer-container">
+    <div class="container footer-container" style="text-align:center; padding:24px 24px; color: var(--muted); border-top:1px solid rgba(255,255,255,.08); background: rgba(255,255,255,.02)">
       <p>&copy; 2025 New Wave Capital – University of Michigan</p>
     </div>
   </footer>
 
-  <!-- Interactions -->
+  <!-- AOS Library -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>AOS.init({ duration: 1000, once: true });</script>
+
+  <!-- Script (same as apply.html) -->
   <script>
     const progress = document.querySelector('.progress');
     const setProgress = () => {
       const h = document.documentElement;
       const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
-      progress.style.width = scrolled + '%';
+      if(progress) progress.style.width = scrolled + '%';
     };
     setProgress(); addEventListener('scroll', setProgress, {passive:true});
 
     const header = document.querySelector('.header');
     const onScrollHeader = () => {
+      if(!header) return;
       if(window.scrollY > 10) header.classList.add('scrolled');
       else header.classList.remove('scrolled');
     };
     onScrollHeader();
     window.addEventListener('scroll', onScrollHeader, {passive:true});
 
-    const revealEls = [...document.querySelectorAll('.reveal, .stagger')];
+    const revealEls = [...document.querySelectorAll('.reveal')];
     const io = new IntersectionObserver((entries)=>{
       entries.forEach(entry=>{
         if(entry.isIntersecting){
@@ -104,7 +115,7 @@
     const root = document.documentElement;
     const spotlight = document.querySelector('.spotlight');
     let rafId = null;
-    let mx = innerWidth/2, my = innerHeight/2;
+    let mx = window.innerWidth/2, my = window.innerHeight/2;
     const updateMouseVars = () => {
       root.style.setProperty('--mx', mx + 'px');
       root.style.setProperty('--my', my + 'px');
@@ -125,7 +136,7 @@
       el.style.setProperty('--y', `${e.clientY - r.top}px`);
     };
     document.addEventListener('pointermove', (e)=>{
-      document.querySelectorAll('.card').forEach(el=>{
+      document.querySelectorAll('.card, .btn-primary, .btn-secondary').forEach(el=>{
         const r = el.getBoundingClientRect();
         if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom){
           trackXY(e, el);
@@ -133,19 +144,36 @@
       });
     }, {passive:true});
 
-    function makeTilt(el){
-      const damp = 12;
-      el.addEventListener('pointermove', (e)=>{
-        const r = el.getBoundingClientRect();
-        const rx = ((e.clientY - r.top)/r.height - .5) * -damp;
-        const ry = ((e.clientX - r.left)/r.width - .5) * damp;
-        el.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+    document.querySelectorAll('a[href^="#"]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const id = a.getAttribute('href');
+        const target = document.querySelector(id);
+        if(target){
+          e.preventDefault();
+          target.scrollIntoView({behavior:'smooth', block:'start'});
+        }
       });
-      el.addEventListener('pointerleave', ()=>{
-        el.style.transform = '';
+    });
+
+    const stars = document.querySelector('.stars');
+    const stars2 = document.querySelector('.stars2');
+    const onScrollParallax = () => {
+      const y = window.scrollY || 0;
+      if(stars)  stars.style.transform  = `translateY(${y * 0.08}px)`;
+      if(stars2) stars2.style.transform = `translateY(${y * 0.14}px)`;
+    };
+    onScrollParallax();
+    addEventListener('scroll', onScrollParallax, {passive:true});
+
+    function revealInView() {
+      document.querySelectorAll('.reveal').forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < innerHeight && r.bottom > 0) el.classList.add('revealed');
       });
     }
-    document.querySelectorAll('.tilt').forEach(makeTilt);
+    revealInView();
+    addEventListener('load', revealInView, { once: true });
+    addEventListener('resize', revealInView);
   </script>
 </body>
 </html>
