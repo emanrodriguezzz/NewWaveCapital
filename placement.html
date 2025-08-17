@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Placement | New Wave Capital</title>
+  <link rel="icon" href="newwavemk2.png" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <!-- Decorative Layers -->
+  <div class="progress" aria-hidden="true"></div>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="stars2" aria-hidden="true"></div>
+  <div class="spotlight" aria-hidden="true"></div>
+
+  <!-- Header -->
+  <header class="header">
+    <div class="header-container">
+      <img src="newwavemk2.png" alt="Logo" class="logo" />
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="hedgefund.html">Hedge Fund</a></li>
+          <li><a href="leadership.html">Leadership</a></li>
+          <li><a href="placement.html" class="active">Placement</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Placement Section -->
+  <section class="section reveal" id="placement">
+    <div class="container">
+      <h2 class="section-title">Where Our Members Have Worked</h2>
+      <p class="section-description">
+        New Wave Capital students have earned offers and internships at the world’s top firms across finance, consulting, and beyond.
+      </p>
+
+      <div class="grid-3 stagger">
+        <!-- BlackRock -->
+        <div class="card tilt" style="text-align:center;">
+          <img src="blackrock.png" alt="BlackRock" style="width: 160px; max-width: 100%; height: auto; margin: 0 auto;" />
+          <h3 style="margin-top: 18px;">BlackRock</h3>
+        </div>
+
+        <!-- McKinsey -->
+        <div class="card tilt" style="text-align:center;">
+          <img src="mckinsey.png" alt="McKinsey & Company" style="width: 160px; max-width: 100%; height: auto; margin: 0 auto;" />
+          <h3 style="margin-top: 18px;">McKinsey</h3>
+        </div>
+
+        <!-- Morgan Stanley -->
+        <div class="card tilt" style="text-align:center;">
+          <img src="morganstanley.png" alt="Morgan Stanley" style="width: 160px; max-width: 100%; height: auto; margin: 0 auto;" />
+          <h3 style="margin-top: 18px;">Morgan Stanley</h3>
+        </div>
+
+        <!-- KPMG -->
+        <div class="card tilt" style="text-align:center;">
+          <img src="kpmg.jpeg" alt="KPMG" style="width: 140px; max-width: 100%; height: auto; margin: 0 auto;" />
+          <h3 style="margin-top: 18px;">KPMG</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="reveal">
+    <div class="container footer-container">
+      <p>&copy; 2025 New Wave Capital – University of Michigan</p>
+    </div>
+  </footer>
+
+  <!-- Same Interactions Script from index.html -->
+  <script>
+    const progress = document.querySelector('.progress');
+    const setProgress = () => {
+      const h = document.documentElement;
+      const scrolled = (h.scrollTop) / (h.scrollHeight - h.clientHeight) * 100;
+      progress.style.width = scrolled + '%';
+    };
+    setProgress(); addEventListener('scroll', setProgress, {passive:true});
+
+    const header = document.querySelector('.header');
+    const onScrollHeader = () => {
+      if(window.scrollY > 10) header.classList.add('scrolled');
+      else header.classList.remove('scrolled');
+    };
+    onScrollHeader(); window.addEventListener('scroll', onScrollHeader, {passive:true});
+
+    const revealEls = [...document.querySelectorAll('.reveal, .stagger')];
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(entry=>{
+        if(entry.isIntersecting){
+          entry.target.classList.add('revealed');
+          io.unobserve(entry.target);
+        }
+      });
+    }, {threshold: .14, rootMargin: '0px 0px -10% 0px'});
+    revealEls.forEach(el=>io.observe(el));
+
+    const root = document.documentElement;
+    const spotlight = document.querySelector('.spotlight');
+    let rafId = null;
+    let mx = innerWidth/2, my = innerHeight/2;
+    const updateMouseVars = () => {
+      root.style.setProperty('--mx', mx + 'px');
+      root.style.setProperty('--my', my + 'px');
+      if(spotlight){
+        spotlight.style.setProperty('--mx', mx + 'px');
+        spotlight.style.setProperty('--my', my + 'px');
+      }
+      rafId = null;
+    };
+    addEventListener('pointermove', (e)=>{
+      mx = e.clientX; my = e.clientY;
+      if(!rafId) rafId = requestAnimationFrame(updateMouseVars);
+    }, {passive:true});
+
+    const trackXY = (e, el) => {
+      const r = el.getBoundingClientRect();
+      el.style.setProperty('--x', `${e.clientX - r.left}px`);
+      el.style.setProperty('--y', `${e.clientY - r.top}px`);
+    };
+    document.addEventListener('pointermove', (e)=>{
+      document.querySelectorAll('.card').forEach(el=>{
+        const r = el.getBoundingClientRect();
+        if (e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom){
+          trackXY(e, el);
+        }
+      });
+    }, {passive:true});
+
+    function makeTilt(el){
+      const damp = 12;
+      el.addEventListener('pointermove', (e)=>{
+        const r = el.getBoundingClientRect();
+        const rx = ((e.clientY - r.top)/r.height - .5) * -damp;
+        const ry = ((e.clientX - r.left)/r.width - .5) * damp;
+        el.style.transform = `translateY(-6px) rotateX(${rx}deg) rotateY(${ry}deg)`;
+      });
+      el.addEventListener('pointerleave', ()=>{
+        el.style.transform = '';
+      });
+    }
+    document.querySelectorAll('.tilt').forEach(makeTilt);
+
+    const stars = document.querySelector('.stars');
+    const stars2 = document.querySelector('.stars2');
+    const onScrollParallax = () => {
+      const y = window.scrollY || 0;
+      if(stars)  stars.style.transform  = `translateY(${y * 0.08}px)`;
+      if(stars2) stars2.style.transform = `translateY(${y * 0.14}px)`;
+    };
+    onScrollParallax(); addEventListener('scroll', onScrollParallax, {passive:true});
+  </script>
+</body>
+</html>
